@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="hero_title">Caravan Rental</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/gallery/out_front_right_400w.jpg" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" data-translate-key="nav_home">Caravan Rentals</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#value-proposition" data-translate-key="nav_about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#photo-gallery" data-translate-key="nav_photos">Photos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#specs" data-translate-key="nav_caravan">Caravan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing" data-translate-key="nav_pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-cta" data-translate-key="nav_contact">Contact</a>
+                        </li>
+                        <!-- Language selector with flag emojis -->
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="en" title="English">
+                                <span class="flag-emoji">🇬🇧</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="et" title="Estonian">
+                                <span class="flag-emoji">🇪🇪</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="ru" title="Russian">
+                                <span class="flag-emoji">🇷🇺</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid p-0">
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-5 bg-primary text-white">
+            <div class="container">
+                <h1 class="display-4 fw-bold" data-translate-key="hero_title">Unlock Your Adventure: Rent an Elddis Corona Caravan Today!</h1>
+                <p class="lead fs-4" data-translate-key="hero_subtitle">Experience the freedom of the open road with our premium, family-friendly caravan. Perfect for your next getaway!</p>
+                <a href="#pricing" class="btn btn-light btn-lg fw-bold" data-translate-key="hero_button">Book Your Adventure Now</a>
+            </div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section id="value-proposition" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="value_prop_title">Why Choose Our Elddis Corona?</h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="value_prop_1_title">Comfort & Style</h5>
+                                <p class="card-text" data-translate-key="value_prop_1_text">Travel in a modern, well-equipped caravan that feels like a home away from home.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="value_prop_2_title">Freedom to Explore</h5>
+                                <p class="card-text" data-translate-key="value_prop_2_text">Discover hidden gems and create unforgettable memories at your own pace.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="value_prop_3_title">Affordable Luxury</h5>
+                                <p class="card-text" data-translate-key="value_prop_3_text">Enjoy a premium travel experience without breaking the bank.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Photo Gallery Section -->
+        <section id="photo-gallery" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="gallery_title">Photo Gallery</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/out_front_left_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_front_left_1200w.jpg">
+                            <img src="img/gallery/out_front_left_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Left">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/out_back_right_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_back_right_1200w.jpg">
+                            <img src="img/gallery/out_back_right_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Back Right">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/out_front_right_awning_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_front_right_awning_1200w.jpg">
+                            <img src="img/gallery/out_front_right_awning_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Right with Awning">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_right_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_right_closedbed_1200w.jpg">
+                            <img src="img/gallery/in_right_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Closed Bed">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_right_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_right_openbed_1200w.jpg">
+                            <img src="img/gallery/in_right_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Open Bed">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_kitchen_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_kitchen_1200w.jpg">
+                            <img src="img/gallery/in_kitchen_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Kitchen">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_left_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_left_closedbed_1200w.jpg">
+                            <img src="img/gallery/in_left_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Closed Bed">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_left_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_left_openbed_1200w.jpg">
+                            <img src="img/gallery/in_left_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Open Bed">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3 gallery-item">
+                        <a href="img/gallery/in_bathroom_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_bathroom_1200w.jpg">
+                            <img src="img/gallery/in_bathroom_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Bathroom">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section id="specs" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="specs_features_title">Specifications, Features & Amenities</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" data-translate-key="specs_berths">Berths: 5</li>
+                            <li class="list-group-item" data-translate-key="specs_length_internal">Internal Length: 4.90 m</li>
+                            <li class="list-group-item" data-translate-key="specs_length_shipping">Shipping Length: 6.27 m</li>
+                            <li class="list-group-item" data-translate-key="specs_width">Overall Width: 2.18 m</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" data-translate-key="specs_height_overall">Overall Height: 2.63 m</li>
+                            <li class="list-group-item" data-translate-key="specs_mtplm">MTPLM: 1350 kg</li>
+                            <li class="list-group-item" data-translate-key="specs_miro">MRO: 1175 kg</li>
+                            <li class="list-group-item" data-translate-key="specs_payload">User Payload: 175 kg</li>
+                            <li class="list-group-item" data-translate-key="specs_axles">Axles: Single</li>
+                            <li class="list-group-item" data-translate-key="specs_layout_type">Layout Type: Twin Dinette, End Washroom</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-4"> <!-- Added mt-4 for spacing -->
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_kitchen">Fully equipped kitchen (hob, oven, grill, fridge)</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_washroom">Spacious washroom with shower and toilet</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_heating">Efficient heating system for all-season comfort</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_beds">Comfortable sleeping arrangements for up to 5 people</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_storage">Ample storage space for all your gear</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_entertainment">Entertainment system with TV, DVD player and radio</h5>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_awning">Retractable awning for extended outdoor living space</h5>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title" data-translate-key="feature_safety">Complete safety equipment including fire extinguisher, smoke detector, and first aid kit</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel" data-translate-key="gallery_modal_title">Image Preview</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center position-relative">
+                        <img src="" id="modalImage" class="img-fluid" alt="Enlarged caravan image">
+                        <button class="btn btn-outline-light position-absolute top-50 start-0 translate-middle-y ms-2" id="prevImage" aria-label="Previous image"><</button>
+                        <button class="btn btn-outline-light position-absolute top-50 end-0 translate-middle-y me-2" id="nextImage" aria-label="Next image">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pricing Information Section -->
+        <section id="pricing" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="pricing_title">Rental Pricing</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" data-translate-key="pricing_peak_season">Peak Season (June-August): €95/day</li>
+                                    <li class="list-group-item" data-translate-key="pricing_off_season">Off-Season (September-May): €75/day</li>
+                                    <li class="list-group-item" data-translate-key="pricing_weekend">Weekend Special (Fri-Sun): €225</li>
+                                    <li class="list-group-item" data-translate-key="pricing_deposit">Security Deposit: €200 (refundable)</li>
+                                    <li class="list-group-item" data-translate-key="pricing_includes">Price includes: Basic insurance, gas bottle, kitchen equipment, bedding, and outdoor furniture</li>
+                                </ul>
+                                <p class="mt-3 text-center" data-translate-key="pricing_contact_cta">Contact us for a personalized quote or long-term rental discounts!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="contact-cta" class="py-5 text-white"> <!-- Removed text-center, added text-white for better contrast on dark bg if any -->
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="contact_main_title">Book the Caravan Now!</h2>
+                <div class="row align-items-start"> <!-- Use align-items-start or center based on preference -->
+                    <div class="col-md-6 text-center text-md-start mb-4 mb-md-0"> <!-- Text alignment for different screen sizes -->
+                        <a href="tel:+37253322495" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button">Call +372 533 22 495</a>
+                        <a href="https://wa.me/37253322495" target="_blank" class="btn btn-success btn-lg d-block mb-3" data-translate-key="contact_whatsapp_button">Contact on WhatsApp</a>
+                        <a href="mailto:info@example.com" class="btn btn-info btn-lg d-block mb-3" data-translate-key="contact_email_button">Send an Email</a>
+                        <p class="mt-3" data-translate-key="contact_phone_label">Phone: <a href="tel:+37253322495" class="text-white fw-bold">+372 533 22 495</a></p>
+                        <p class="mt-1" data-translate-key="contact_email_label">Email: <a href="mailto:info@example.com" class="text-white fw-bold">info@example.com</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Embedded map of Tartu, Estonia -->
+                        <div class="map-container rounded shadow">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68634.7764739856!2d26.6868869!3d58.3776252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb371e8a8ef9b7%3A0x4e28d080f3a42557!2sTartu%2C%20Estonia!5e0!3m2!1sen!2sus!4v1623841234567!5m2!1sen!2sus"
+                                width="100%"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p data-translate-key="footer_copyright">&copy; 2025 Caravan Rentals Tartu. All rights reserved.</p>
+            <p>
+                <a href="rental-terms.html" class="text-white mx-2" data-translate-key="nav_rental_terms">Rental Terms</a> |
+                <a href="privacy-policy.html" class="text-white mx-2" data-translate-key="nav_privacy_policy">Privacy Policy</a> |
+                <a href="cookie-policy.html" class="text-white mx-2" data-translate-key="nav_cookie_policy">Cookie Policy</a>
+            </p>
+            <p><a href="mailto:info@example.com" class="text-white">info@example.com</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Bootstrap initialization script -->
+    <script src="js/bootstrap-init.js" defer></script>
+    <script src="js/language-detector.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

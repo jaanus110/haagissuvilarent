@@ -1,0 +1,310 @@
+/* Custom styles for the Caravan Rental website */
+
+/* Flag emoji language selector styling */
+.lang-link {
+    padding: 0.25rem 0.5rem !important;
+    margin: 0 0.1rem;
+    border-radius: 0.25rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.flag-emoji {
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.lang-link.active .flag-emoji {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    border-radius: 2px;
+}
+
+.lang-link:hover .flag-emoji {
+    transform: scale(1.2);
+}
+
+.lang-link.active {
+    background-color: rgba(0,123,255,0.1);
+}
+
+.lang-link:hover:not(.active) {
+    background-color: #f8f9fa;
+}
+
+html {
+    scroll-padding-top: 120px; /* Offset for fixed navbar when scrolling to anchors */
+    scroll-behavior: smooth; /* Enable native smooth scrolling */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px; /* Match scroll-padding-top for initial load */
+}
+
+main {
+    flex: 1;
+}
+
+header nav .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem; /* Slightly larger brand name */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+}
+
+/* Hero Section Styling */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_1200w.jpg') no-repeat center center; /* Using an existing image */
+    background-size: cover;
+    color: white;
+    padding: 80px 0; /* Increased padding */
+}
+
+#hero h1 {
+    font-size: 3rem; /* Larger hero title */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+#hero .lead {
+    font-size: 1.5rem; /* Larger lead text */
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+#hero .btn-light {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    font-size: 2.2rem; /* Consistent heading size */
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Card Styling */
+.card {
+    border: none; /* Remove default card border */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* List Group for Specs */
+#specs .list-group-item {
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0;
+    font-size: 1.1rem;
+}
+#specs .list-group-item:first-child {
+    border-top: 0;
+}
+#specs .list-group-item:last-child {
+    border-bottom: 0;
+}
+
+#specs {
+    background-color: #343a40; /* Dark background */
+    color: white; /* Default text color for the section */
+}
+
+#specs h2 {
+    color: white; /* Ensure section title is white */
+}
+
+#specs .list-group-item {
+    background-color: transparent; /* Make list group items transparent */
+    color: white; /* Text color for list items */
+    border-color: rgba(255, 255, 255, 0.125); /* Lighter border for contrast */
+}
+
+#specs .card {
+    background-color: #495057; /* Slightly lighter dark shade for cards */
+    color: white;
+    border: 1px solid #6c757d; /* Border for cards */
+}
+
+#specs .card-title {
+    color: white; /* Ensure card titles are white */
+}
+
+/* Gallery Styling */
+.gallery-image {
+  border: 3px solid #dee2e6; /* Original border style */
+  transition: transform 0.3s ease;
+  /* Ensure img-fluid class is used on the <img> tag in HTML for responsiveness */
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* Zoom effect on image */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important; /* Enhanced shadow on image hover */
+}
+
+/* Modal Navigation Buttons */
+.modal-body .btn#prevImage,
+.modal-body .btn#nextImage {
+    width: 25%; /* Make clickable area 1/4 of the image width */
+    height: 100%;
+    top: 0;
+    transform: none; /* Reset previous translate */
+    opacity: 0; /* Make buttons invisible */
+    z-index: 10; /* Ensure they are on top */
+}
+
+.modal-body .btn#prevImage {
+    left: 0;
+}
+
+.modal-body .btn#nextImage {
+    right: 0;
+}
+
+/* Add some visual feedback if needed, or keep them fully transparent */
+/* For example, a subtle icon on hover if desired, but keeping them invisible is fine too */
+/* .modal-body .btn#prevImage:hover,
+.modal-body .btn#nextImage:hover {
+    opacity: 0.2;
+    background-color: rgba(255, 255, 255, 0.1);
+} */
+
+
+/* Pricing Section */
+#pricing .card {
+    border: 1px solid #dee2e6;
+}
+
+/* Call to Action Buttons */
+#contact-cta .btn {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+#contact-cta {
+    background-color: #343a40; /* Dark background for contrast with text-white */
+    /* text-white class is already on the section in HTML */
+}
+
+/* Map Container Styling */
+.map-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-container iframe {
+    border-radius: 0.375rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 30px 0; /* Increased padding */
+    margin-top: auto;
+}
+
+footer a {
+    color: #adb5bd; /* Lighter grey for footer links */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+    color: #f8f9fa; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero .lead {
+        font-size: 1.3rem;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) { /* Small devices (landscape phones, less than 768px) */
+    body {
+        padding-top: 56px; /* Ensure content isn't hidden by navbar */
+    }
+    .navbar-nav {
+        text-align: center;
+        background-color: #f8f9fa; /* Add background to collapsed menu for better readability */
+        border-top: 1px solid #e7e7e7;
+    }
+    .navbar-nav .nav-item {
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+    #hero .lead {
+        font-size: 1.2rem;
+    }
+    #hero .btn-light {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    #location .col-md-6 img {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) { /* Extra small devices (portrait phones, less than 576px) */
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+    #hero .lead {
+        font-size: 1rem;
+    }
+    section h2 {
+        font-size: 1.6rem;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    #contact-cta .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
