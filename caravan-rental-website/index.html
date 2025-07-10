@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rendi haagissuvila Tartus, Eestis." data-translate-key-content="meta_description">
+    <meta name="keywords" content="haagissuvila rent, Tartu, Eesti, Elddis Corona" data-translate-key-content="meta_keywords">
     <title data-translate-key="hero_title">Caravan Rental</title>
     <!-- Favicon -->
     <link rel="icon" href="img/gallery/out_front_right_400w.jpg" type="image/jpeg">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17270220159">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17270220159');
+</script>
 </head>
 <body>
     <header>
@@ -20,9 +31,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#value-proposition" data-translate-key="nav_about">About Us</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#photo-gallery" data-translate-key="nav_photos">Photos</a>
                         </li>
@@ -165,6 +173,7 @@
                             <li class="list-group-item" data-translate-key="specs_length_internal">Internal Length: 4.90 m</li>
                             <li class="list-group-item" data-translate-key="specs_length_shipping">Shipping Length: 6.27 m</li>
                             <li class="list-group-item" data-translate-key="specs_width">Overall Width: 2.18 m</li>
+                            <li class="list-group-item" data-translate-key="specs_towbar_load">Lubatud koormus haakeseadmele: 100 kg</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -174,7 +183,6 @@
                             <li class="list-group-item" data-translate-key="specs_miro">MRO: 1175 kg</li>
                             <li class="list-group-item" data-translate-key="specs_payload">User Payload: 175 kg</li>
                             <li class="list-group-item" data-translate-key="specs_axles">Axles: Single</li>
-                            <li class="list-group-item" data-translate-key="specs_layout_type">Layout Type: Twin Dinette, End Washroom</li>
                         </ul>
                     </div>
                 </div>
@@ -203,13 +211,6 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_beds">Comfortable sleeping arrangements for up to 5 people</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
                                 <h5 class="card-title" data-translate-key="feature_storage">Ample storage space for all your gear</h5>
                             </div>
                         </div>
@@ -225,13 +226,6 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h5 class="card-title" data-translate-key="feature_awning">Retractable awning for extended outdoor living space</h5>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_safety">Complete safety equipment including fire extinguisher, smoke detector, and first aid kit</h5>
                             </div>
                         </div>
                     </div>
@@ -258,19 +252,37 @@
         <!-- Pricing Information Section -->
         <section id="pricing" class="py-5 bg-light">
             <div class="container">
-                <h2 class="text-center mb-4" data-translate-key="pricing_title">Rental Pricing</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card shadow-sm">
+                <h2 class="text-center mb-5" data-translate-key="rental_section_title">Rentimine</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_conditions_title">Renditingimused</h4>
+                            </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" data-translate-key="pricing_peak_season">Peak Season (June-August): €95/day</li>
-                                    <li class="list-group-item" data-translate-key="pricing_off_season">Off-Season (September-May): €75/day</li>
-                                    <li class="list-group-item" data-translate-key="pricing_weekend">Weekend Special (Fri-Sun): €225</li>
-                                    <li class="list-group-item" data-translate-key="pricing_deposit">Security Deposit: €200 (refundable)</li>
-                                    <li class="list-group-item" data-translate-key="pricing_includes">Price includes: Basic insurance, gas bottle, kitchen equipment, bedding, and outdoor furniture</li>
+                                    <li class="list-group-item" data-translate-key="rental_period_min">minimaalne rendiperiood: 3 päeva</li>
+                                    <li class="list-group-item" data-translate-key="rental_pickup_time">kättesaamine: alates 9:00</li>
+                                    <li class="list-group-item" data-translate-key="rental_return_time">tagastamine: kuni 17:00</li>
+                                    <li class="list-group-item" data-translate-key="rental_min_driving_experience">minimaalne juhistaaž: 3 aastat</li>
                                 </ul>
-                                <p class="mt-3 text-center" data-translate-key="pricing_contact_cta">Contact us for a personalized quote or long-term rental discounts!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header">
+                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_fees_title">Tasud</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" data-translate-key="rental_booking_fee">broneerimistasu: 150 eurot (arvestatakse rendihinna sisse)</li>
+                                    <li class="list-group-item" data-translate-key="rental_deposit">tagatisraha: 350 eurot (tagastatav)</li>
+                                    <li class="list-group-item" data-translate-key="rental_final_cleaning">lõpukoristus: 80 eurot (kui haagissuvila pole puhas)</li>
+                                    <li class="list-group-item" data-translate-key="rental_price_fri_sun">renditasu R-P: 85 eurot / päev</li>
+                                    <li class="list-group-item" data-translate-key="rental_price_mon_thu">renditasu E-N 75 eurot / päev</li>
+                                    <li class="list-group-item" data-translate-key="rental_price_2025_2027">17.07.2025 - 20.07.2025 170 eurot / päev</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -284,23 +296,15 @@
                 <h2 class="text-center mb-4" data-translate-key="contact_main_title">Book the Caravan Now!</h2>
                 <div class="row align-items-start"> <!-- Use align-items-start or center based on preference -->
                     <div class="col-md-6 text-center text-md-start mb-4 mb-md-0"> <!-- Text alignment for different screen sizes -->
-                        <a href="tel:+37253322495" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button">Call +372 533 22 495</a>
+                        <a href="tel:+37253322495" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button">Call +372 53322495</a>
+                        <a href="tel:+37255568914" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button_2">Call +372 55568914</a>
                         <a href="https://wa.me/37253322495" target="_blank" class="btn btn-success btn-lg d-block mb-3" data-translate-key="contact_whatsapp_button">Contact on WhatsApp</a>
-                        <a href="mailto:info@example.com" class="btn btn-info btn-lg d-block mb-3" data-translate-key="contact_email_button">Send an Email</a>
-                        <p class="mt-3" data-translate-key="contact_phone_label">Phone: <a href="tel:+37253322495" class="text-white fw-bold">+372 533 22 495</a></p>
-                        <p class="mt-1" data-translate-key="contact_email_label">Email: <a href="mailto:info@example.com" class="text-white fw-bold">info@example.com</a></p>
+                        <a href="mailto:info@tartuhaagissuvila.ee" class="btn btn-info btn-lg d-block mb-3" data-translate-key="contact_email_button">Send an Email</a>
                     </div>
                     <div class="col-md-6">
                         <!-- Embedded map of Tartu, Estonia -->
                         <div class="map-container rounded shadow">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68634.7764739856!2d26.6868869!3d58.3776252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb371e8a8ef9b7%3A0x4e28d080f3a42557!2sTartu%2C%20Estonia!5e0!3m2!1sen!2sus!4v1623841234567!5m2!1sen!2sus"
-                                width="100%"
-                                height="300"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy">
-                            </iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33484.38183399277!2d26.682231492936484!3d58.36348495351906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3764d18082e1%3A0x323d11ec0bc0d43f!2sSaariku!5e0!3m2!1set!2see!4v1750930638176!5m2!1set!2see" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -310,13 +314,16 @@
 
     <footer class="bg-dark text-white text-center py-4 mt-auto">
         <div class="container">
-            <p data-translate-key="footer_copyright">&copy; 2025 Caravan Rentals Tartu. All rights reserved.</p>
+            <p>
+                <a href="tel:+37253322495" class="text-white mx-2">+372 53322495</a> |
+                <a href="tel:+37255568914" class="text-white mx-2">+372 55568914</a> |
+                <a href="mailto:info@tartuhaagissuvila.ee" class="text-white mx-2">info@tartuhaagissuvila.ee</a>
+            </p>
             <p>
                 <a href="rental-terms.html" class="text-white mx-2" data-translate-key="nav_rental_terms">Rental Terms</a> |
                 <a href="privacy-policy.html" class="text-white mx-2" data-translate-key="nav_privacy_policy">Privacy Policy</a> |
                 <a href="cookie-policy.html" class="text-white mx-2" data-translate-key="nav_cookie_policy">Cookie Policy</a>
             </p>
-            <p><a href="mailto:info@example.com" class="text-white">info@example.com</a></p>
         </div>
     </footer>
 
