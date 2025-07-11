@@ -1,337 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rendi haagissuvila Tartus, Eestis." data-translate-key-content="meta_description">
-    <meta name="keywords" content="haagissuvila rent, Tartu, Eesti, Elddis Corona" data-translate-key-content="meta_keywords">
-    <title data-translate-key="hero_title">Caravan Rental</title>
+    <title>Haagissuvila rent Tartus, Eestis</title>
+    <meta name="description" content="Rendi mugav haagissuvila Tartus, Eestis. Ideaalne perepuhkuseks ja Baltikumi avastamiseks.">
+    <!-- No automatic redirect for search engines -->
+    <!-- <meta http-equiv="refresh" content="0;url=/et/"> -->
+    
+    <!-- SEO meta tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tartuhaagissuvila.ee/et/">
+    <meta http-equiv="content-language" content="et">
+    
     <!-- Favicon -->
-    <link rel="icon" href="img/gallery/out_front_right_400w.jpg" type="image/jpeg">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17270220159">
-    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/gallery/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gallery/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/gallery/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/gallery/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="img/gallery/favicon/favicon.ico">
+    
+    <!-- Hreflang tags -->
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/et/" hreflang="x-default">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/et/" hreflang="et">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/en/" hreflang="en">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/ru/" hreflang="ru">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .language-banner {
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .language-links {
+            margin-top: 20px;
+        }
+        .language-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .language-links a.primary-lang {
+            background-color: #007bff;
+            color: white;
+            border-color: #0069d9;
+            font-weight: bold;
+        }
+        .language-links a img,
+        .language-links a svg {
+            margin-right: 8px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+    </style>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17270220159');
-</script>
+        // More reliable approach for handling language selection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Don't redirect immediately - let search engines see the content
+            setTimeout(function() {
+                // Language detection logic
+                function detectLanguage() {
+                    // Check for stored preference
+                    const storedLang = localStorage.getItem('preferredLang');
+                    if (storedLang && ['en', 'et', 'ru'].includes(storedLang)) {
+                        return storedLang;
+                    }
+                    
+                    // Always default to Estonian for new visitors
+                    return 'et';
+                }
+                
+                // Check if the user agent is a search engine bot
+                function isBot() {
+                    const botPattern = "(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)";
+                    return new RegExp(botPattern, 'i').test(navigator.userAgent);
+                }
+                
+                // Only redirect human visitors, not search engine bots
+                if (!isBot()) {
+                    const lang = detectLanguage();
+                    localStorage.setItem('preferredLang', lang); // Store for future visits
+                    window.location.href = '/' + lang + '/';
+                }
+            }, 50); // Small delay to ensure content is indexed
+        });
+        
+        // Structured data for search engines
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://tartuhaagissuvila.ee/",
+            "name": "Haagissuvila rent Tartus",
+            "description": "Rendi mugav haagissuvila Tartus, Eestis. Ideaalne perepuhkuseks ja Baltikumi avastamiseks.",
+            "inLanguage": "et",
+            "potentialAction": {
+                "@type": "ViewAction",
+                "target": "https://tartuhaagissuvila.ee/et/"
+            }
+        };
+        
+        // Add structured data to page
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    </script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html" data-translate-key="nav_home">Caravan Rentals</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#photo-gallery" data-translate-key="nav_photos">Photos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#specs" data-translate-key="nav_caravan">Caravan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pricing" data-translate-key="nav_pricing">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact-cta" data-translate-key="nav_contact">Contact</a>
-                        </li>
-                        <!-- Language selector with flag emojis -->
-                        <li class="nav-item">
-                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="en" title="English">
-                                <span class="flag-emoji">🇬🇧</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="et" title="Estonian">
-                                <span class="flag-emoji">🇪🇪</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link lang-link" href="javascript:void(0);" data-lang="ru" title="Russian">
-                                <span class="flag-emoji">🇷🇺</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container-fluid p-0">
-        <!-- Hero Section -->
-        <section id="hero" class="text-center py-5 bg-primary text-white">
-            <div class="container">
-                <h1 class="display-4 fw-bold" data-translate-key="hero_title">Unlock Your Adventure: Rent an Elddis Corona Caravan Today!</h1>
-                <p class="lead fs-4" data-translate-key="hero_subtitle">Experience the freedom of the open road with our premium, family-friendly caravan. Perfect for your next getaway!</p>
-                <a href="#pricing" class="btn btn-light btn-lg fw-bold" data-translate-key="hero_button">Book Your Adventure Now</a>
-            </div>
-        </section>
-
-        <!-- Value Proposition Section -->
-        <section id="value-proposition" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-4" data-translate-key="value_prop_title">Why Choose Our Elddis Corona?</h2>
-                <div class="row text-center">
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_1_title">Comfort & Style</h5>
-                                <p class="card-text" data-translate-key="value_prop_1_text">Travel in a modern, well-equipped caravan that feels like a home away from home.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_2_title">Freedom to Explore</h5>
-                                <p class="card-text" data-translate-key="value_prop_2_text">Discover hidden gems and create unforgettable memories at your own pace.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_3_title">Affordable Luxury</h5>
-                                <p class="card-text" data-translate-key="value_prop_3_text">Enjoy a premium travel experience without breaking the bank.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- Photo Gallery Section -->
-        <section id="photo-gallery" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-4" data-translate-key="gallery_title">Photo Gallery</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/out_front_left_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_front_left_1200w.jpg">
-                            <img src="img/gallery/out_front_left_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Left">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/out_back_right_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_back_right_1200w.jpg">
-                            <img src="img/gallery/out_back_right_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Back Right">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/out_front_right_awning_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/out_front_right_awning_1200w.jpg">
-                            <img src="img/gallery/out_front_right_awning_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Right with Awning">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_right_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_right_closedbed_1200w.jpg">
-                            <img src="img/gallery/in_right_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Closed Bed">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_right_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_right_openbed_1200w.jpg">
-                            <img src="img/gallery/in_right_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Open Bed">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_kitchen_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_kitchen_1200w.jpg">
-                            <img src="img/gallery/in_kitchen_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Kitchen">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_left_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_left_closedbed_1200w.jpg">
-                            <img src="img/gallery/in_left_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Closed Bed">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_left_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_left_openbed_1200w.jpg">
-                            <img src="img/gallery/in_left_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Open Bed">
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3 gallery-item">
-                        <a href="img/gallery/in_bathroom_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/gallery/in_bathroom_1200w.jpg">
-                            <img src="img/gallery/in_bathroom_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Bathroom">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Specifications Section -->
-        <section id="specs" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-4" data-translate-key="specs_features_title">Specifications, Features & Amenities</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" data-translate-key="specs_berths">Berths: 5</li>
-                            <li class="list-group-item" data-translate-key="specs_length_internal">Internal Length: 4.90 m</li>
-                            <li class="list-group-item" data-translate-key="specs_length_shipping">Shipping Length: 6.27 m</li>
-                            <li class="list-group-item" data-translate-key="specs_width">Overall Width: 2.18 m</li>
-                            <li class="list-group-item" data-translate-key="specs_towbar_load">Lubatud koormus haakeseadmele: 100 kg</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" data-translate-key="specs_height_overall">Overall Height: 2.63 m</li>
-                            <li class="list-group-item" data-translate-key="specs_mtplm">MTPLM: 1350 kg</li>
-                            <li class="list-group-item" data-translate-key="specs_miro">MRO: 1175 kg</li>
-                            <li class="list-group-item" data-translate-key="specs_payload">User Payload: 175 kg</li>
-                            <li class="list-group-item" data-translate-key="specs_axles">Axles: Single</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row mt-4"> <!-- Added mt-4 for spacing -->
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_kitchen">Fully equipped kitchen (hob, oven, grill, fridge)</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_washroom">Spacious washroom with shower and toilet</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_heating">Efficient heating system for all-season comfort</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_storage">Ample storage space for all your gear</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_entertainment">Entertainment system with TV, DVD player and radio</h5>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title" data-translate-key="feature_awning">Retractable awning for extended outdoor living space</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Image Modal -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="imageModalLabel" data-translate-key="gallery_modal_title">Image Preview</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center position-relative">
-                        <img src="" id="modalImage" class="img-fluid" alt="Enlarged caravan image">
-                        <button class="btn btn-outline-light position-absolute top-50 start-0 translate-middle-y ms-2" id="prevImage" aria-label="Previous image"><</button>
-                        <button class="btn btn-outline-light position-absolute top-50 end-0 translate-middle-y me-2" id="nextImage" aria-label="Next image">></button>
-                    </div>
-                </div>
-            </div>
+    <div class="language-banner">
+        <h1>Haagissuvila rent Tartus, Eestis</h1>
+        <p>Tere tulemast! Palun valige keel:</p>
+        <div class="language-links">
+            <a href="/et/" class="primary-lang">
+                <img src="/img/flags/et.svg" alt="Eesti lipp" width="30" height="15">
+                Eesti keeles
+            </a>
+            <a href="/en/">
+                <img src="/img/flags/en.svg" alt="UK flag" width="30" height="15">
+                In English
+            </a>
+            <a href="/ru/">
+                <img src="/img/flags/ru.svg" alt="Российский флаг" width="30" height="15">
+                На русском
+            </a>
         </div>
-        <!-- Pricing Information Section -->
-        <section id="pricing" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5" data-translate-key="rental_section_title">Rentimine</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header">
-                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_conditions_title">Renditingimused</h4>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" data-translate-key="rental_period_min">minimaalne rendiperiood: 3 päeva</li>
-                                    <li class="list-group-item" data-translate-key="rental_pickup_time">kättesaamine: alates 9:00</li>
-                                    <li class="list-group-item" data-translate-key="rental_return_time">tagastamine: kuni 17:00</li>
-                                    <li class="list-group-item" data-translate-key="rental_min_driving_experience">minimaalne juhistaaž: 3 aastat</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header">
-                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_fees_title">Tasud</h4>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" data-translate-key="rental_booking_fee">broneerimistasu: 150 eurot (arvestatakse rendihinna sisse)</li>
-                                    <li class="list-group-item" data-translate-key="rental_deposit">tagatisraha: 350 eurot (tagastatav)</li>
-                                    <li class="list-group-item" data-translate-key="rental_final_cleaning">lõpukoristus: 80 eurot (kui haagissuvila pole puhas)</li>
-                                    <li class="list-group-item" data-translate-key="rental_price_fri_sun">renditasu R-P: 85 eurot / päev</li>
-                                    <li class="list-group-item" data-translate-key="rental_price_mon_thu">renditasu E-N 75 eurot / päev</li>
-                                    <li class="list-group-item" data-translate-key="rental_price_2025_2027">17.07.2025 - 20.07.2025 170 eurot / päev</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section id="contact-cta" class="py-5 text-white"> <!-- Removed text-center, added text-white for better contrast on dark bg if any -->
-            <div class="container">
-                <h2 class="text-center mb-4" data-translate-key="contact_main_title">Book the Caravan Now!</h2>
-                <div class="row align-items-start"> <!-- Use align-items-start or center based on preference -->
-                    <div class="col-md-6 text-center text-md-start mb-4 mb-md-0"> <!-- Text alignment for different screen sizes -->
-                        <a href="tel:+37253322495" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button">Call +372 53322495</a>
-                        <a href="tel:+37255568914" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button_2">Call +372 55568914</a>
-                        <a href="https://wa.me/37253322495" target="_blank" class="btn btn-success btn-lg d-block mb-3" data-translate-key="contact_whatsapp_button">Contact on WhatsApp</a>
-                        <a href="mailto:info@tartuhaagissuvila.ee" class="btn btn-info btn-lg d-block mb-3" data-translate-key="contact_email_button">Send an Email</a>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Embedded map of Tartu, Estonia -->
-                        <div class="map-container rounded shadow">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33484.38183399277!2d26.682231492936484!3d58.36348495351906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3764d18082e1%3A0x323d11ec0bc0d43f!2sSaariku!5e0!3m2!1set!2see!4v1750930638176!5m2!1set!2see" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-4 mt-auto">
-        <div class="container">
-            <p>
-                <a href="tel:+37253322495" class="text-white mx-2">+372 53322495</a> |
-                <a href="tel:+37255568914" class="text-white mx-2">+372 55568914</a> |
-                <a href="mailto:info@tartuhaagissuvila.ee" class="text-white mx-2">info@tartuhaagissuvila.ee</a>
-            </p>
-            <p>
-                <a href="rental-terms.html" class="text-white mx-2" data-translate-key="nav_rental_terms">Rental Terms</a> |
-                <a href="privacy-policy.html" class="text-white mx-2" data-translate-key="nav_privacy_policy">Privacy Policy</a> |
-                <a href="cookie-policy.html" class="text-white mx-2" data-translate-key="nav_cookie_policy">Cookie Policy</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-    <!-- Bootstrap initialization script -->
-    <script src="js/bootstrap-init.js" defer></script>
-    <script src="js/language-detector.js" defer></script>
-    <script src="js/main.js" defer></script>
+    </div>
+    
+    <!-- Estonian content for search engines -->
+    <div class="seo-content">
+        <h2>Rendi mugav haagissuvila Tartus</h2>
+        <p>Naudi puhkust kogu perega omas tempos ja täpselt seal kus seda soovid. Meie Elddis Corona haagissuvila on täielikult varustatud ja pakub mugavat majutust kuni 5 inimesele.</p>
+        <p>Rendihinnad alates 75€ päev. Minimaalne rendiaeg on 2 päeva.</p>
+        <p>Võta meiega ühendust telefonil +37253322495 või e-posti aadressil info@tartuhaagissuvila.ee</p>
+    </div>
 </body>
 </html>
