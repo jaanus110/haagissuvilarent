@@ -6,23 +6,205 @@
     <meta name="description" content="{{meta_description}}" data-translate-key-content="meta_description">
     <meta name="keywords" content="{{meta_keywords}}" data-translate-key-content="meta_keywords">
     <title data-translate-key="hero_title">{{hero_title}}</title>
+    <!-- Resource hints for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+    <link rel="preload" href="../css/styles.css" as="style" onload="this.rel='stylesheet'">
+    <!-- Preload hero background image with responsive sizes -->
+    <link rel="preload"
+          href="../img/gallery/out_front_right_400w.webp"
+          as="image"
+          media="(max-width: 576px)"
+          fetchpriority="high">
+    <link rel="preload"
+          href="../img/gallery/out_front_right_800w.webp"
+          as="image"
+          media="(max-width: 1200px) and (min-width: 577px)"
+          fetchpriority="high">
+    <link rel="preload"
+          href="../img/gallery/out_front_right_1200w.webp"
+          as="image"
+          media="(min-width: 1201px)"
+          fetchpriority="high">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Font optimization to prevent layout shifts -->
+    <style>
+        /* System font stack optimization */
+        @font-face {
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Arial');
+        }
+        @font-face {
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Arial Bold'), local('Arial-Bold');
+        }
+        
+        /* Pre-define text dimensions to prevent layout shifts */
+        .hero-text-container {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        
+        /* Ensure text doesn't cause layout shifts during font loading */
+        h1, h2, h3, p, .lead {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+    </style>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- SEO meta tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="EE-78">
+    <meta name="geo.placename" content="Tartu">
+    <meta name="geo.position" content="58.3634850;26.6822315">
+    <meta name="ICBM" content="58.3634850, 26.6822315">
+    <meta name="theme-color" content="#007bff">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://www.googletagmanager.com https://maps.googleapis.com https://cdn.jsdelivr.net https:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.google.com https://www.googletagmanager.com https://maps.gstatic.com https://maps.googleapis.com data:; frame-src https://www.google.com https://www.googletagmanager.com https://td.doubleclick.net; connect-src 'self' https://www.googletagmanager.com https://maps.googleapis.com https://maps.gstatic.com https://www.google.com https://*.google-analytics.com https://stats.g.doubleclick.net;">
+    
     <!-- Favicon -->
-    <link rel="icon" href="../img/gallery/out_front_right_400w.jpg" type="image/jpeg">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17270220159">
-    </script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17270220159');
-</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/gallery/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/gallery/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/gallery/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/gallery/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="../img/gallery/favicon/favicon.ico">
+    
+    <!-- Bootstrap CSS - Load only what's needed -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"></noscript>
+    <link rel="stylesheet" href="../css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <style>
+        /* Critical CSS for above-the-fold content */
+        body {
+            font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-size: 16px;
+            margin: 0;
+            font-display: swap;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 70px; /* Fixed height for navbar */
+        }
+        
+        /* Fix for collapsed navbar to prevent layout shifts */
+        .navbar-collapse {
+            position: absolute;
+            top: 70px; /* Match navbar height */
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1020;
+        }
+        #hero {
+            background-color: #007bff; /* Fallback color while image loads */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            color: white;
+            padding: 80px 0;
+            min-height: 400px; /* Fixed minimum height to prevent layout shift */
+            display: flex;
+            align-items: center;
+            width: 100%;
+            /* Default background for browsers that don't support media queries */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_800w.webp');
+        }
+        
+        /* Responsive background images */
+        @media (max-width: 576px) {
+            #hero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_400w.webp');
+            }
+        }
+        
+        @media (min-width: 577px) and (max-width: 1200px) {
+            #hero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_800w.webp');
+            }
+        }
+        
+        @media (min-width: 1201px) {
+            #hero {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_1200w.webp');
+            }
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-size-adjust: 0.5; /* Maintain consistent height with fallback fonts */
+        }
+        #hero .lead {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            font-size-adjust: 0.5; /* Maintain consistent height with fallback fonts */
+        }
+        #hero .btn-light {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+        }
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+    </style>
+    
+    <!-- Google Tag Manager moved to end of head and made async -->
 
 <!-- Structured Data for Google Search -->
-<script type="application/ld+json">
+<script type="application/ld+json" async>
 {
   "@context": "https://schema.org",
   "@type": "RentalVehicleCompany",
@@ -57,10 +239,11 @@
 }
 </script>
 
-<script type="application/ld+json">
+<script type="application/ld+json" async>
 {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://tartuhaagissuvila.ee/{{lang}}/#elddis-corona",
   "name": "Elddis Corona 490/5",
   "image": [
     "https://tartuhaagissuvila.ee/img/gallery/out_front_right_1200w.jpg",
@@ -110,7 +293,7 @@
 }
 </script>
 
-<script type="application/ld+json">
+<script type="application/ld+json" async>
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -132,14 +315,20 @@
     },
     "object": {
       "@type": "Product",
-      "name": "Elddis Corona 490/5"
+      "name": "Elddis Corona 490/5",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "75",
+        "highPrice": "170"
+      }
     }
   }
 }
 </script>
 
 <!-- FAQ Schema -->
-<script type="application/ld+json">
+<script type="application/ld+json" async>
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -179,8 +368,35 @@
   ]
 }
 </script>
+
+<!-- Google Tag Manager added at the end of head with defer attribute -->
+<script defer>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Create a function to load GTM
+function loadGTM() {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N54TZK2H');
+}
+
+// Load GTM after the page has loaded
+if (document.readyState === 'complete') {
+    loadGTM();
+} else {
+    window.addEventListener('load', loadGTM);
+}
+</script>
+<!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N54TZK2H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
@@ -205,17 +421,17 @@
                         <!-- Language selector with flag emojis -->
                         <li class="nav-item">
                             <a class="nav-link lang-link" href="/en/" data-lang="en" title="English">
-                                <span class="flag-emoji">🇬🇧</span>
+                                <img src="/img/flags/en.svg" alt="EN" class="flag-img" width="30" height="15">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link lang-link" href="/et/" data-lang="et" title="Estonian">
-                                <span class="flag-emoji">🇪🇪</span>
+                                <img src="/img/flags/et.svg" alt="ET" class="flag-img" width="30" height="15">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link lang-link" href="/ru/" data-lang="ru" title="Russian">
-                                <span class="flag-emoji">🇷🇺</span>
+                                <img src="/img/flags/ru.svg" alt="RU" class="flag-img" width="30" height="15">
                             </a>
                         </li>
                     </ul>
@@ -227,10 +443,12 @@
     <main class="container-fluid p-0">
         <!-- Hero Section -->
         <section id="hero" class="text-center py-5 bg-primary text-white">
-            <div class="container">
-                <h1 class="display-4 fw-bold" data-translate-key="hero_title">{{hero_title}}</h1>
-                <p class="lead fs-4" data-translate-key="hero_subtitle">{{hero_subtitle}}</p>
-                <a href="#pricing" class="btn btn-light btn-lg fw-bold" data-translate-key="hero_button">{{hero_button}}</a>
+            <div class="container" style="max-width: 100%; width: 100%;">
+                <div class="hero-text-container">
+                    <h1 class="display-4 fw-bold" data-translate-key="hero_title">{{hero_title}}</h1>
+                    <p class="lead fs-4" data-translate-key="hero_subtitle">{{hero_subtitle}}</p>
+                    <a href="#contact-cta" class="btn btn-light btn-lg fw-bold" data-translate-key="hero_button">{{hero_button}}</a>
+                </div>
             </div>
         </section>
 
@@ -242,7 +460,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_1_title">{{value_prop_1_title}}</h5>
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_1_title">{{value_prop_1_title}}</h5>
                                 <p class="card-text" data-translate-key="value_prop_1_text">{{value_prop_1_text}}</p>
                             </div>
                         </div>
@@ -250,7 +468,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_2_title">{{value_prop_2_title}}</h5>
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_2_title">{{value_prop_2_title}}</h5>
                                 <p class="card-text" data-translate-key="value_prop_2_text">{{value_prop_2_text}}</p>
                             </div>
                         </div>
@@ -258,7 +476,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title" data-translate-key="value_prop_3_title">{{value_prop_3_title}}</h5>
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_3_title">{{value_prop_3_title}}</h5>
                                 <p class="card-text" data-translate-key="value_prop_3_text">{{value_prop_3_text}}</p>
                             </div>
                         </div>
@@ -274,47 +492,182 @@
                 <div class="row">
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/out_front_left_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/out_front_left_1200w.jpg">
-                            <img src="../img/gallery/out_front_left_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Left">
+                            <picture>
+                                <source srcset="../img/gallery/out_front_left_400w.webp 400w,
+                                                ../img/gallery/out_front_left_800w.webp 800w,
+                                                ../img/gallery/out_front_left_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/out_front_left_400w.jpg 400w,
+                                             ../img/gallery/out_front_left_800w.jpg 800w,
+                                             ../img/gallery/out_front_left_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/out_front_left_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Exterior Front Left">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/out_back_right_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/out_back_right_1200w.jpg">
-                            <img src="../img/gallery/out_back_right_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Back Right">
+                            <picture>
+                                <source srcset="../img/gallery/out_back_right_400w.webp 400w,
+                                                ../img/gallery/out_back_right_800w.webp 800w,
+                                                ../img/gallery/out_back_right_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/out_back_right_400w.jpg 400w,
+                                             ../img/gallery/out_back_right_800w.jpg 800w,
+                                             ../img/gallery/out_back_right_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/out_back_right_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Exterior Back Right">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/out_front_right_awning_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/out_front_right_awning_1200w.jpg">
-                            <img src="../img/gallery/out_front_right_awning_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Exterior Front Right with Awning">
+                            <picture>
+                                <source srcset="../img/gallery/out_front_right_awning_400w.webp 400w,
+                                                ../img/gallery/out_front_right_awning_800w.webp 800w,
+                                                ../img/gallery/out_front_right_awning_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/out_front_right_awning_400w.jpg 400w,
+                                             ../img/gallery/out_front_right_awning_800w.jpg 800w,
+                                             ../img/gallery/out_front_right_awning_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/out_front_right_awning_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Exterior Front Right with Awning">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_right_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_right_closedbed_1200w.jpg">
-                            <img src="../img/gallery/in_right_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Closed Bed">
+                            <picture>
+                                <source srcset="../img/gallery/in_right_closedbed_400w.webp 400w,
+                                                ../img/gallery/in_right_closedbed_800w.webp 800w,
+                                                ../img/gallery/in_right_closedbed_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_right_closedbed_400w.jpg 400w,
+                                             ../img/gallery/in_right_closedbed_800w.jpg 800w,
+                                             ../img/gallery/in_right_closedbed_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_right_closedbed_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Right Closed Bed">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_right_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_right_openbed_1200w.jpg">
-                            <img src="../img/gallery/in_right_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Right Open Bed">
+                            <picture>
+                                <source srcset="../img/gallery/in_right_openbed_400w.webp 400w,
+                                                ../img/gallery/in_right_openbed_800w.webp 800w,
+                                                ../img/gallery/in_right_openbed_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_right_openbed_400w.jpg 400w,
+                                             ../img/gallery/in_right_openbed_800w.jpg 800w,
+                                             ../img/gallery/in_right_openbed_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_right_openbed_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Right Open Bed">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_kitchen_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_kitchen_1200w.jpg">
-                            <img src="../img/gallery/in_kitchen_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Kitchen">
+                            <picture>
+                                <source srcset="../img/gallery/in_kitchen_400w.webp 400w,
+                                                ../img/gallery/in_kitchen_800w.webp 800w,
+                                                ../img/gallery/in_kitchen_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_kitchen_400w.jpg 400w,
+                                             ../img/gallery/in_kitchen_800w.jpg 800w,
+                                             ../img/gallery/in_kitchen_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_kitchen_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Kitchen">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_left_closedbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_left_closedbed_1200w.jpg">
-                            <img src="../img/gallery/in_left_closedbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Closed Bed">
+                            <picture>
+                                <source srcset="../img/gallery/in_left_closedbed_400w.webp 400w,
+                                                ../img/gallery/in_left_closedbed_800w.webp 800w,
+                                                ../img/gallery/in_left_closedbed_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_left_closedbed_400w.jpg 400w,
+                                             ../img/gallery/in_left_closedbed_800w.jpg 800w,
+                                             ../img/gallery/in_left_closedbed_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_left_closedbed_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Left Closed Bed">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_left_openbed_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_left_openbed_1200w.jpg">
-                            <img src="../img/gallery/in_left_openbed_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Left Open Bed">
+                            <picture>
+                                <source srcset="../img/gallery/in_left_openbed_400w.webp 400w,
+                                                ../img/gallery/in_left_openbed_800w.webp 800w,
+                                                ../img/gallery/in_left_openbed_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_left_openbed_400w.jpg 400w,
+                                             ../img/gallery/in_left_openbed_800w.jpg 800w,
+                                             ../img/gallery/in_left_openbed_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_left_openbed_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Left Open Bed">
+                            </picture>
                         </a>
                     </div>
                     <div class="col-md-4 mb-3 gallery-item">
                         <a href="../img/gallery/in_bathroom_1200w.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="../img/gallery/in_bathroom_1200w.jpg">
-                            <img src="../img/gallery/in_bathroom_800w.jpg" class="img-fluid rounded shadow-sm gallery-image" alt="Caravan Interior Bathroom">
+                            <picture>
+                                <source srcset="../img/gallery/in_bathroom_400w.webp 400w,
+                                                ../img/gallery/in_bathroom_800w.webp 800w,
+                                                ../img/gallery/in_bathroom_1200w.webp 1200w"
+                                        sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                        type="image/webp">
+                                <img srcset="../img/gallery/in_bathroom_400w.jpg 400w,
+                                             ../img/gallery/in_bathroom_800w.jpg 800w,
+                                             ../img/gallery/in_bathroom_1200w.jpg 1200w"
+                                     sizes="(max-width: 576px) 400px, (max-width: 992px) 350px, 382px"
+                                     src="../img/gallery/in_bathroom_800w.jpg"
+                                     width="382" height="287"
+                                     loading="lazy"
+                                     class="img-fluid rounded shadow-sm gallery-image"
+                                     alt="Caravan Interior Bathroom">
+                            </picture>
                         </a>
                     </div>
                 </div>
@@ -416,7 +769,7 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm mb-4">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_conditions_title">{{rental_conditions_title}}</h4>
+                                <h3 class="my-0 fw-normal text-center" data-translate-key="rental_conditions_title">{{rental_conditions_title}}</h3>
                             </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
@@ -431,7 +784,7 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm mb-4">
                             <div class="card-header">
-                                <h4 class="my-0 fw-normal text-center" data-translate-key="rental_fees_title">{{rental_fees_title}}</h4>
+                                <h3 class="my-0 fw-normal text-center" data-translate-key="rental_fees_title">{{rental_fees_title}}</h3>
                             </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
@@ -463,7 +816,7 @@
                     <div class="col-md-6">
                         <!-- Embedded map of Tartu, Estonia -->
                         <div class="map-container rounded shadow">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33484.38183399277!2d26.682231492936484!3d58.36348495351906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3764d18082e1%3A0x323d11ec0bc0d43f!2sSaariku!5e0!3m2!1set!2see!4v1750930638176!5m2!1set!2see" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33484.38183399277!2d26.682231492936484!3d58.36348495351906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3764d18082e1%3A0x323d11ec0bc0d43f!2sSaariku!5e0!3m2!1set!2see!4v1750930638176!5m2!1set!2see" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" crossorigin="anonymous" title="Map showing Saariku location in Tartu, Estonia"></iframe>
                         </div>
                     </div>
                 </div>

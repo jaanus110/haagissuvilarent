@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <!-- Google Tag Manager dataLayer initialization -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0KBTF08GL'); // GA4 configuration tag
+    gtag('config', 'AW-17270220159'); // Google Ads Tag
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N54TZK2H');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Immediate language redirect script - placed at the very top for fastest execution -->
+    <script>
+    // Optimized language detection and redirect
+    (function() {
+        // Skip redirect for search engine bots
+        function isBot() {
+            return /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+        }
+        
+        if (!isBot()) {
+            // Check for stored preference
+            var storedLang = localStorage.getItem('preferredLang');
+            var lang = (storedLang && ['en', 'et', 'ru'].includes(storedLang)) ? storedLang : 'et';
+            
+            // Store for future visits
+            localStorage.setItem('preferredLang', lang);
+            
+            // Immediate redirect
+            window.location.replace('/' + lang + '/');
+        }
+    })();
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haagissuvila rent Tartus, Eestis</title>
-    <meta name="description" content="Rendi mugav haagissuvila Tartus, Eestis. Ideaalne perepuhkuseks ja Baltikumi avastamiseks.">
-    <!-- No automatic redirect for search engines -->
-    <!-- <meta http-equiv="refresh" content="0;url=/et/"> -->
-    
+    <title>Haagissuvila rent Tartus, Lõuna-Eestis</title>
+    <meta name="description" content="Rendi mugav haagissuvila Tartust, Lõuna-Eestist. Ideaalne perepuhkuseks ja Baltikumi avastamiseks.">
+
     <!-- SEO meta tags -->
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tartuhaagissuvila.ee/et/">
     <meta http-equiv="content-language" content="et">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://www.googletagmanager.com https://maps.googleapis.com https://cdn.jsdelivr.net https:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://www.google.com https://www.googletagmanager.com https://maps.gstatic.com https://maps.googleapis.com data:; frame-src https://www.google.com https://www.googletagmanager.com https://td.doubleclick.net; connect-src 'self' https://www.googletagmanager.com https://maps.googleapis.com https://maps.gstatic.com https://www.google.com https://*.google-analytics.com https://stats.g.doubleclick.net;">
+    
+    <!-- Resource hints for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/gallery/favicon/apple-touch-icon.png">
@@ -68,37 +115,6 @@
         }
     </style>
     <script>
-        // More reliable approach for handling language selection
-        document.addEventListener('DOMContentLoaded', function() {
-            // Don't redirect immediately - let search engines see the content
-            setTimeout(function() {
-                // Language detection logic
-                function detectLanguage() {
-                    // Check for stored preference
-                    const storedLang = localStorage.getItem('preferredLang');
-                    if (storedLang && ['en', 'et', 'ru'].includes(storedLang)) {
-                        return storedLang;
-                    }
-                    
-                    // Always default to Estonian for new visitors
-                    return 'et';
-                }
-                
-                // Check if the user agent is a search engine bot
-                function isBot() {
-                    const botPattern = "(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)";
-                    return new RegExp(botPattern, 'i').test(navigator.userAgent);
-                }
-                
-                // Only redirect human visitors, not search engine bots
-                if (!isBot()) {
-                    const lang = detectLanguage();
-                    localStorage.setItem('preferredLang', lang); // Store for future visits
-                    window.location.href = '/' + lang + '/';
-                }
-            }, 50); // Small delay to ensure content is indexed
-        });
-        
         // Structured data for search engines
         const structuredData = {
             "@context": "https://schema.org",
@@ -119,8 +135,13 @@
         script.text = JSON.stringify(structuredData);
         document.head.appendChild(script);
     </script>
+    
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N54TZK2H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="language-banner">
         <h1>Haagissuvila rent Tartus, Eestis</h1>
         <p>Tere tulemast! Palun valige keel:</p>
@@ -147,5 +168,8 @@
         <p>Rendihinnad alates 75€ päev. Minimaalne rendiaeg on 2 päeva.</p>
         <p>Võta meiega ühendust telefonil +37253322495 või e-posti aadressil info@tartuhaagissuvila.ee</p>
     </div>
+    
+    <!-- Load main.js -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>
