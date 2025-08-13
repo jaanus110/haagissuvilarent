@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://tartuhaagissuvila.ee/sitemap-en.xml</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://tartuhaagissuvila.ee/sitemap-et.xml</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://tartuhaagissuvila.ee/sitemap-ru.xml</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://tartuhaagissuvila.ee/sitemap-images.xml</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://tartuhaagissuvila.ee/sitemap-amp.xml</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+  </sitemap>
+</sitemapindex>

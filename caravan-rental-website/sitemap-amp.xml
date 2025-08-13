@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English AMP Homepage -->
+  <url>
+    <loc>https://tartuhaagissuvila.ee/en/amp</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tartuhaagissuvila.ee/en/amp" />
+    <xhtml:link rel="alternate" hreflang="et" href="https://tartuhaagissuvila.ee/et/amp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tartuhaagissuvila.ee/ru/amp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tartuhaagissuvila.ee/et/amp" />
+  </url>
+
+  <!-- Estonian AMP Homepage -->
+  <url>
+    <loc>https://tartuhaagissuvila.ee/et/amp</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tartuhaagissuvila.ee/en/amp" />
+    <xhtml:link rel="alternate" hreflang="et" href="https://tartuhaagissuvila.ee/et/amp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tartuhaagissuvila.ee/ru/amp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tartuhaagissuvila.ee/et/amp" />
+  </url>
+
+  <!-- Russian AMP Homepage -->
+  <url>
+    <loc>https://tartuhaagissuvila.ee/ru/amp</loc>
+    <lastmod>2025-08-13T11:45:53.307+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tartuhaagissuvila.ee/en/amp" />
+    <xhtml:link rel="alternate" hreflang="et" href="https://tartuhaagissuvila.ee/et/amp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tartuhaagissuvila.ee/ru/amp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tartuhaagissuvila.ee/et/amp" />
+  </url>
+
+</urlset>

@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{breadcrumb_home}}",
+      "item": "https://tartuhaagissuvila.ee/{{lang}}/",
+      "inLanguage": "{{lang}}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{title_rental_terms}}",
+      "item": "https://tartuhaagissuvila.ee/{{lang}}/rental-terms.html",
+      "inLanguage": "{{lang}}"
+    }
+  ],
+  "inLanguage": "{{lang}}",
+  "potentialAction": {
+    "@type": "ViewAction",
+    "target": [
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tartuhaagissuvila.ee/en/rental-terms.html",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tartuhaagissuvila.ee/et/rental-terms.html",
+        "inLanguage": "et"
+      },
+      {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tartuhaagissuvila.ee/ru/rental-terms.html",
+        "inLanguage": "ru"
+      }
+    ]
+  }
+}

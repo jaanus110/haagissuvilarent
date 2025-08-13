@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <!-- COMPONENT: GTM_HEAD -->
+    <!-- COMPONENT: META_BASE -->
+    <meta name="description" content="{{meta_description}}" data-translate-key-content="meta_description">
+    <meta name="keywords" content="{{meta_keywords}}" data-translate-key-content="meta_keywords">
+    <title data-translate-key="hero_title">{{hero_title}}</title>
+    
+    <!-- Resource hints for performance optimization -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" href="../img/gallery/out_front_right_800w.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="../css/styles.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+    
+    <!-- COMPONENT: CRITICAL_CSS -->
+    
+    <!-- SEO meta tags -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Enhanced geo-tagging meta tags -->
+    <meta name="geo.region" content="EE-78">
+    <meta name="geo.country" content="EE">
+    <meta name="geo.placename" content="Tartu">
+    <meta name="geo.position" content="58.3634850;26.6822315">
+    <meta name="ICBM" content="58.3634850, 26.6822315">
+    <meta name="geo.nuts" content="EE008">
+    <meta name="geo.nearby" content="Võru, Põlva, Jõgeva, Valga, Elva, Viljandi, Paide, Rakvere">
+    
+    <!-- Mobile and PWA meta tags -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="{{nav_home}}">
+    
+    <!-- Translation source indicator -->
+    <meta name="translation-source" content="{{lang}}-original">
+    <meta name="content-origin" content="{{lang}}">
+    
+    <!-- Content Security Policy - Updated to allow all Google and Facebook services -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com https://*.google-analytics.com https://*.googleapis.com https://cdn.jsdelivr.net https://*.facebook.net https://*.facebook.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com https://*.google-analytics.com https://*.googleapis.com https://*.facebook.com data:; frame-src https://*.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com https://*.facebook.com; connect-src 'self' https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com https://*.google-analytics.com https://*.googleapis.com https://*.google.com https://*.facebook.net https://*.facebook.com;">
+    
+    <!-- COMPONENT: FAVICON_LINKS -->
+    
+    <!-- COMPONENT: CSS_LINKS -->
+    <style>
+        /* Navbar styles */
+        .navbar {
+            background-color: #f8f9fa;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 70px; /* Fixed height for navbar */
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        /* Fix for collapsed navbar to prevent layout shifts */
+        .navbar-collapse {
+            position: absolute;
+            top: 70px; /* Match navbar height */
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1020;
+        }
+        
+        /* Custom navbar styles */
+        .custom-navbar {
+            background-color: #f8f9fa;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 70px; /* Fixed height for navbar */
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-links .nav-link {
+            padding: 0.5rem 1rem;
+            color: rgba(0,0,0,.55);
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+        }
+        
+        .navbar-links .nav-link:hover {
+            color: rgba(0,0,0,.7);
+        }
+
+        /* Critical CSS for above-the-fold content - optimized for Core Web Vitals */
+        body {
+            font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding-top: 70px; /* Only account for navbar height */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-size: 16px;
+            margin: 0;
+            font-display: swap;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+            content-visibility: auto;
+            contain: layout style paint;
+        }
+        
+        /* Hero section styling */
+        #hero {
+            background-image: url('../img/gallery/out_front_right_800w.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            position: relative;
+            padding: 100px 0;
+            margin-top: -70px; /* Offset for navbar height */
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        #hero .lead {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+    
+    <!-- COMPONENT: STRUCTURED_DATA_WEBPAGE -->
+    <!-- COMPONENT: STRUCTURED_DATA_BUSINESS -->
+    <!-- COMPONENT: STRUCTURED_DATA_PRODUCT -->
+    <!-- COMPONENT: STRUCTURED_DATA_FAQ -->
+    <!-- COMPONENT: STRUCTURED_DATA_BREADCRUMB -->
+    <!-- COMPONENT: STRUCTURED_DATA_REVIEW -->
+    
+    <!-- COMPONENT: META_PIXEL -->
+</head>
+<body>
+    <!-- COMPONENT: GTM_BODY -->
+    
+    <!-- COMPONENT: NAVBAR -->
+    
+    <main class="container-fluid p-0">
+        <section id="hero" class="text-center py-5 bg-primary text-white">
+            <div class="container" style="max-width: 100%; width: 100%;">
+                <div class="hero-text-container">
+                    <h1 data-translate-key="hero_heading">{{hero_heading}}</h1>
+                    <p class="lead" data-translate-key="hero_subtitle">{{hero_subtitle}}</p>
+                    <a href="#contact-cta" class="btn btn-light btn-lg" data-translate-key="hero_button">{{hero_button}}</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="value-proposition" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-translate-key="value_prop_title">{{value_prop_title}}</h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_1_title">{{value_prop_1_title}}</h5>
+                                <p class="card-text" data-translate-key="value_prop_1_text">{{value_prop_1_text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_2_title">{{value_prop_2_title}}</h5>
+                                <p class="card-text" data-translate-key="value_prop_2_text">{{value_prop_2_text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold" data-translate-key="value_prop_3_title">{{value_prop_3_title}}</h5>
+                                <p class="card-text" data-translate-key="value_prop_3_text">{{value_prop_3_text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Photo Gallery Section -->
+        <!-- COMPONENT: GALLERY_SECTION -->
+
+        <!-- Specifications Section -->
+        <section id="specs" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="specs_features_title">{{specs_features_title}}</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" data-translate-key="specs_berths">{{specs_berths}}</li>
+                            <li class="list-group-item" data-translate-key="specs_length_internal">{{specs_length_internal}}</li>
+                            <li class="list-group-item" data-translate-key="specs_length_shipping">{{specs_length_shipping}}</li>
+                            <li class="list-group-item" data-translate-key="specs_width">{{specs_width}}</li>
+                            <li class="list-group-item" data-translate-key="specs_towbar_load">{{specs_towbar_load}}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" data-translate-key="specs_height_overall">{{specs_height_overall}}</li>
+                            <li class="list-group-item" data-translate-key="specs_mtplm">{{specs_mtplm}}</li>
+                            <li class="list-group-item" data-translate-key="specs_miro">{{specs_miro}}</li>
+                            <li class="list-group-item" data-translate-key="specs_payload">{{specs_payload}}</li>
+                            <li class="list-group-item" data-translate-key="specs_axles">{{specs_axles}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-4"> <!-- Added mt-4 for spacing -->
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_kitchen">{{feature_kitchen}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_washroom">{{feature_washroom}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_heating">{{feature_heating}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_storage">{{feature_storage}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_entertainment">{{feature_entertainment}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" data-translate-key="feature_awning">{{feature_awning}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Information Section -->
+        <section id="pricing" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-translate-key="rental_section_title">{{rental_section_title}}</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center" data-translate-key="rental_conditions_title">{{rental_conditions_title}}</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center" data-translate-key="rental_period_min">{{rental_period_min}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_pickup_time">{{rental_pickup_time}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_return_time">{{rental_return_time}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_min_driving_experience">{{rental_min_driving_experience}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center" data-translate-key="rental_fees_title">{{rental_fees_title}}</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center" data-translate-key="rental_booking_fee">{{rental_booking_fee}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_deposit">{{rental_deposit}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_final_cleaning">{{rental_final_cleaning}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_price_fri_sun">{{rental_price_fri_sun}}</li>
+                                    <li class="list-group-item text-center" data-translate-key="rental_price_mon_thu">{{rental_price_mon_thu}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="contact-cta" class="py-5 text-white"> <!-- Removed text-center, added text-white for better contrast on dark bg if any -->
+            <div class="container">
+                <h2 class="text-center mb-4" data-translate-key="contact_main_title">{{contact_main_title}}</h2>
+                <div class="row align-items-start"> <!-- Use align-items-start or center based on preference -->
+                    <div class="col-md-6 text-center text-md-start mb-4 mb-md-0"> <!-- Text alignment for different screen sizes -->
+                        <a href="tel:+37253322495" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button">{{contact_call_button}}</a>
+                        <a href="tel:+37255568914" class="btn btn-primary btn-lg d-block mb-3" data-translate-key="contact_call_button_2">{{contact_call_button_2}}</a>
+                        <a href="https://wa.me/37253322495" target="_blank" class="btn btn-success btn-lg d-block mb-3" data-translate-key="contact_whatsapp_button">{{contact_whatsapp_button}}</a>
+                        <a href="mailto:info@tartuhaagissuvila.ee" class="btn btn-info btn-lg d-block mb-3" data-translate-key="contact_email_button">{{contact_email_button}}</a>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Embedded map of Tartu, Estonia -->
+                        <div class="map-container rounded shadow">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33484.38183399277!2d26.682231492936484!3d58.36348495351906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3764d18082e1%3A0x323d11ec0bc0d43f!2sSaariku!5e0!3m2!1set!2see!4v1750930638176!5m2!1set!2see" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" crossorigin="anonymous" title="Map showing Saariku location in Tartu, Estonia"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- COMPONENT: FOOTER -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Bootstrap initialization script -->
+    <script src="../js/bootstrap-init.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/lightbox.js" defer></script>
+</body>
+</html>

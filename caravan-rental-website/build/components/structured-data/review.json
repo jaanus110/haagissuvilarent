@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "inLanguage": "{{lang}}",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "additionalType": "https://schema.org/AutoRental",
+    "name": "{{nav_home}}",
+    "url": "https://tartuhaagissuvila.ee/{{lang}}/"
+  },
+  "ratingValue": "4.8",
+  "bestRating": "5",
+  "worstRating": "1",
+  "ratingCount": "24",
+  "reviewCount": "24"
+}

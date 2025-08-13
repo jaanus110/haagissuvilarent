@@ -1,42 +1,4 @@
-/* Custom styles for the Caravan Rental website */
-
-/* Flag emoji language selector styling */
-.lang-link {
-    padding: 0.25rem 0.5rem !important;
-    margin: 0 0.1rem;
-    border-radius: 0.25rem;
-    font-weight: normal;
-    text-decoration: none;
-}
-
-.flag-emoji {
-    font-size: 1.2rem;
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.lang-link.active .flag-emoji {
-    transform: scale(1.2);
-    box-shadow: 0 0 5px rgba(0,123,255,0.5);
-    border-radius: 2px;
-}
-
-.lang-link:hover .flag-emoji {
-    transform: scale(1.2);
-}
-
-.lang-link.active {
-    background-color: rgba(0,123,255,0.1);
-}
-
-.lang-link:hover:not(.active) {
-    background-color: #f8f9fa;
-}
-
-html {
-    scroll-padding-top: 70px; /* Offset for fixed navbar when scrolling to anchors */
-    scroll-behavior: smooth; /* Enable native smooth scrolling */
-}
+/* Custom styles for the Caravan Rental website - Optimized for Core Web Vitals */
 
 /* Font optimization to prevent layout shifts */
 @font-face {
@@ -45,6 +7,10 @@ html {
     font-weight: 400;
     font-display: swap; /* Show text while font is loading */
     src: local('Arial');
+    size-adjust: 100%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
 }
 
 @font-face {
@@ -53,201 +19,37 @@ html {
     font-weight: 700;
     font-display: swap; /* Show text while font is loading */
     src: local('Arial Bold'), local('Arial-Bold');
+    size-adjust: 100%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
 }
 
+/* Base body styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 70px; /* Only account for navbar height */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 70px; /* Match scroll-padding-top for initial load */
-    font-size: 16px; /* Set explicit font size */
-}
-
-main {
-    flex: 1;
-}
-
-/* Navbar styling to prevent layout shifts */
-/* Custom navbar styling */
-.custom-navbar {
-    height: 70px; /* Fixed height for navbar */
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1030;
-}
-
-.custom-navbar .container-fluid {
-    height: 100%;
-    padding: 0 15px;
-}
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #000;
-    text-decoration: none;
-    margin-right: 0;
-}
-
-.navbar-links {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-links .nav-link {
-    padding: 0.5rem 1rem;
-    color: rgba(0, 0, 0, 0.55);
-    text-decoration: none;
-}
-
-.navbar-links .nav-link:hover {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 0.25rem;
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-
-/* Mobile navigation styling */
-.navbar-collapse {
-    flex-basis: 100%;
-}
-
-/* For mobile view */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 70px; /* Match navbar height */
-        left: 0;
-        right: 0;
-        background-color: #f8f9fa;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1020;
-        padding: 0.5rem 1rem;
-    }
-    
-    .navbar-nav {
-        flex-direction: column;
-    }
-    
-    .navbar-nav .nav-item {
-        margin-bottom: 0.5rem;
-    }
-}
-
-header nav .navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem; /* Slightly larger brand name */
-    margin-right: auto; /* Push nav links to the right */
-}
-
-.navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-}
-
-/* Ensure the navbar container uses the full width */
-.navbar .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-    display: flex;
-    align-items: center;
-}
-
-/* Ensure navbar items are aligned properly */
-.navbar-nav {
-    display: flex;
-    align-items: center;
-}
-
-/* Ensure language flags are aligned properly */
-.lang-link {
-    display: flex;
-    align-items: center;
-}
-
-/* Hero Section Styling */
-#hero {
-    background-color: #007bff; /* Fallback color while image loads */
-    color: white;
-    padding: 80px 0; /* Increased padding */
-    min-height: 400px; /* Fixed minimum height to prevent layout shift */
-    height: auto; /* Allow it to grow if content requires */
-    display: flex;
-    align-items: center;
-    width: 100%;
-    position: relative; /* Add position relative for better layout control */
-    overflow: hidden; /* Prevent content from causing overflow */
-    contain: layout paint; /* Improve rendering performance */
-    
-    /* Use a pseudo-element for the background to prevent layout shifts */
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_1200w.webp') no-repeat center center;
-        background-size: cover;
-        z-index: -1;
-        will-change: transform; /* Optimize for animations */
-    }
-}
-
-#hero h1 {
-    font-size: 3rem; /* Larger hero title */
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    max-width: 100%; /* Prevent text from causing overflow */
-    width: 100%; /* Set explicit width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    overflow-wrap: break-word; /* Ensure text wraps properly */
-}
-
-#hero .lead {
-    font-size: 1.5rem; /* Larger lead text */
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    max-width: 100%; /* Prevent text from causing overflow */
-    width: 100%; /* Set explicit width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    overflow-wrap: break-word; /* Ensure text wraps properly */
-}
-
-#hero .btn-light {
-    padding: 12px 30px;
-    font-size: 1.2rem;
+    font-size: 16px;
+    margin: 0;
+    font-display: swap;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    content-visibility: auto;
+    contain: layout style paint;
 }
 
 /* Section Styling */
 section {
     padding: 60px 0;
+    scroll-margin-top: 80px; /* Increased scroll margin to account for fixed navbar height */
+}
+
+/* Anchor link offset for smooth scrolling */
+:target {
+    scroll-margin-top: 80px; /* Ensures anchors are not hidden behind the navbar */
 }
 
 section h2 {
@@ -256,15 +58,25 @@ section h2 {
     font-weight: bold;
 }
 
-.bg-light {
-    background-color: #f8f9fa !important;
-}
-
 /* Card Styling */
 .card {
     border: none; /* Remove default card border */
     transition: transform 0.3s ease-in-out;
     will-change: transform;
+    contain: layout style paint;
+    content-visibility: auto;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 /* Fix for value proposition cards to prevent layout shifts */
@@ -281,31 +93,12 @@ section h2 {
     justify-content: flex-start;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+/* Add shadow to cards to make them pop out */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
 }
 
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* List Group for Specs */
-#specs .list-group-item {
-    border-left: 0;
-    border-right: 0;
-    padding-left: 0;
-    font-size: 1.1rem;
-}
-#specs .list-group-item:first-child {
-    border-top: 0;
-}
-#specs .list-group-item:last-child {
-    border-bottom: 0;
-}
-
+/* Technical Specs Section */
 #specs {
     background-color: #343a40; /* Dark background */
     color: white; /* Default text color for the section */
@@ -331,111 +124,52 @@ section h2 {
     color: white; /* Ensure card titles are white */
 }
 
-/* Gallery Styling */
-.gallery-image {
-  border: 3px solid #dee2e6; /* Original border style */
-  transition: transform 0.3s ease;
-  will-change: transform;
-  /* Ensure img-fluid class is used on the <img> tag in HTML for responsiveness */
-  aspect-ratio: 4/3; /* Maintain consistent aspect ratio */
-  object-fit: cover; /* Ensure images cover their container */
-  width: 100%; /* Full width of container */
-  height: auto; /* Height will be determined by aspect ratio */
+/* Call to Action Section */
+#contact-cta {
+    background-color: #343a40; /* Dark background for contrast with text-white */
+    color: white;
 }
 
-/* Container for gallery images to prevent layout shifts */
+#contact-cta h2 {
+    color: white;
+}
+
+/* Gallery Styling */
+.gallery-image {
+    border: 3px solid #dee2e6; /* Original border style */
+    transition: transform 0.3s ease;
+    will-change: transform;
+    /* Ensure img-fluid class is used on the <img> tag in HTML for responsiveness */
+    aspect-ratio: 4/3; /* Maintain consistent aspect ratio */
+    object-fit: cover; /* Ensure images cover their container */
+    width: 100%; /* Full width of container */
+    height: auto; /* Height will be determined by aspect ratio */
+    contain: layout style paint;
+    content-visibility: auto;
+}
+
 .gallery-item {
-  min-height: 300px; /* Minimum height to prevent layout shifts */
-  display: block;
+    contain: layout style;
+    content-visibility: auto;
 }
 
 .gallery-image:hover {
-  transform: scale(1.05); /* Zoom effect on image */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important; /* Enhanced shadow on image hover */
+    transform: scale(1.05); /* Zoom effect on image */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important; /* Enhanced shadow on image hover */
 }
 
-/* Modal Navigation Buttons */
-.modal-body .btn#prevImage,
-.modal-body .btn#nextImage {
-    width: 25%; /* Make clickable area 1/4 of the image width */
-    height: 100%;
-    top: 0;
-    transform: none; /* Reset previous translate */
-    opacity: 0; /* Make buttons invisible */
-    z-index: 10; /* Ensure they are on top */
+/* Hero Section Styling */
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-weight: bold;
 }
 
-.modal-body .btn#prevImage {
-    left: 0;
-}
-
-.modal-body .btn#nextImage {
-    right: 0;
-}
-
-/* Add some visual feedback if needed, or keep them fully transparent */
-/* For example, a subtle icon on hover if desired, but keeping them invisible is fine too */
-/* .modal-body .btn#prevImage:hover,
-.modal-body .btn#nextImage:hover {
-    opacity: 0.2;
-    background-color: rgba(255, 255, 255, 0.1);
-} */
-
-
-/* Pricing Section */
-#pricing .card {
-    border: 1px solid #dee2e6;
-}
-
-/* Call to Action Buttons - optimized for composited animations */
-#contact-cta .btn {
-    padding: 10px 25px;
-    font-size: 1.1rem;
-    margin: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    will-change: transform, opacity;
-}
-
-#contact-cta .btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-#contact-cta {
-    background-color: #343a40; /* Dark background for contrast with text-white */
-    /* text-white class is already on the section in HTML */
-}
-
-/* Map Container Styling */
-.map-container {
-    width: 100%;
-    height: 500px; /* Match the iframe height in map-loader.js */
-    overflow: hidden;
-    position: relative;
-    min-height: 500px; /* Ensure minimum height is maintained */
-}
-
-.map-container iframe {
-    border-radius: 0.375rem;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: white;
-    padding: 30px 0; /* Increased padding */
-    margin-top: auto;
-}
-
-footer a {
-    color: #adb5bd; /* Lighter grey for footer links */
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-
-footer a:hover {
-    color: #f8f9fa; /* White on hover */
-    text-decoration: underline;
+#hero .lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 /* Responsive adjustments */
@@ -449,77 +183,157 @@ footer a:hover {
     section h2 {
         font-size: 2rem;
     }
-    #hero::before {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_800w.webp');
-    }
 }
 
 @media (max-width: 768px) { /* Small devices (landscape phones, less than 768px) */
-    body {
-        padding-top: 56px; /* Ensure content isn't hidden by navbar */
-    }
-    .navbar-nav {
-        text-align: center;
-        background-color: #f8f9fa; /* Add background to collapsed menu for better readability */
-        border-top: 1px solid #e7e7e7;
-    }
-    .navbar-nav .nav-item {
-        border-bottom: 1px solid #e7e7e7;
-    }
-    .navbar-nav .nav-item:last-child {
-        border-bottom: none;
-    }
     #hero h1 {
         font-size: 2.2rem;
     }
     #hero .lead {
         font-size: 1.2rem;
     }
-    #hero .btn-light {
-        padding: 10px 25px;
-        font-size: 1.1rem;
-    }
     section h2 {
         font-size: 1.8rem;
     }
-    #location .col-md-6 img {
-        margin-top: 20px;
+    
+    /* Enhanced touch targets for mobile */
+    .navbar-toggler {
+        min-width: 48px;
+        min-height: 48px;
+        padding: 12px;
+        margin-right: 8px;
+    }
+    
+    .nav-link {
+        padding: 12px 16px;
+        margin: 4px 0;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-bottom: 8px;
+    }
+    
+    /* Ensure language links have adequate touch targets */
+    .lang-link {
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 @media (max-width: 576px) { /* Extra small devices (portrait phones, less than 576px) */
-    #hero {
-        min-height: 350px; /* Slightly reduced but still fixed height for mobile */
-        padding: 60px 0; /* Reduced padding for mobile */
-        height: auto !important; /* Force height auto to prevent layout issues */
-    }
-    #hero::before {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/gallery/out_front_right_400w.webp');
-    }
     #hero h1 {
         font-size: 1.8rem;
-        margin-bottom: 15px; /* Reduced margin for mobile */
-        height: auto; /* Allow height to adjust based on content */
     }
     #hero .lead {
-        font-size: 1rem;
-        margin-bottom: 20px; /* Reduced margin for mobile */
-        height: auto; /* Allow height to adjust based on content */
-    }
-    #hero .container {
-        width: 100%; /* Ensure container takes full width */
-        padding-left: 15px; /* Consistent padding */
-        padding-right: 15px; /* Consistent padding */
+        font-size: 1.1rem;
     }
     section h2 {
         font-size: 1.6rem;
     }
-    .card-title {
-        font-size: 1.1rem;
+    
+    /* Further enhanced touch targets for smallest screens */
+    .navbar-toggler {
+        min-width: 52px;
+        min-height: 52px;
     }
-    #contact-cta .btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
+    
+    .nav-link {
+        padding: 16px;
+    }
+    
+    /* Increase spacing between mobile menu items */
+    .navbar-nav .nav-item {
+        margin-bottom: 12px;
+    }
+    
+    /* Ensure buttons have adequate touch targets */
+    .btn {
+        min-height: 48px;
+        padding: 12px 24px;
     }
 }
+
+/* Touch target optimization for all interactive elements */
+button,
+.btn,
+a.nav-link,
+.navbar-toggler,
+input[type="button"],
+input[type="submit"] {
+    touch-action: manipulation; /* Optimize for touch */
+}
+
+/* Custom navbar styles */
+.custom-navbar {
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050; /* Increased z-index to ensure it stays on top */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 70px; /* Fixed height for navbar */
+    padding: 0.5rem 1rem;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links .nav-link {
+    padding: 0.5rem 1rem;
+    color: rgba(0,0,0,.55);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+/* Breadcrumb styling */
+nav[aria-label="breadcrumb"] {
+    position: fixed;
+    top: 70px; /* Position right below the navbar */
+    left: 0;
+    width: 100%;
+    z-index: 1040;
+    padding: 0.5rem 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Adjust main content to account for fixed breadcrumb */
+main {
+    margin-top: 40px; /* Add margin to account for fixed breadcrumb */
+}
+
+.navbar-links .nav-link:hover {
+    color: rgba(0,0,0,.7);
+}
+
+/* Fix for collapsed navbar to prevent layout shifts */
+.navbar-collapse {
+    position: absolute;
+    top: 70px; /* Match navbar height */
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1040;
+}
+
+/* Ensure navbar toggle button is visible */
+.navbar-toggler {
+    z-index: 1060;
+    position: relative;
+}
+
+/* Modal styling has been replaced with lightbox.css */

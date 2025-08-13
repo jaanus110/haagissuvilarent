@@ -1,14 +1,7 @@
 User-agent: *
 Allow: /
-Allow: /et/
 Allow: /en/
+Allow: /et/
 Allow: /ru/
 
-# Prioritize Estonian version
-Crawl-delay: 1
-
-# Indicate primary language version
-# Estonian is the primary language
-# https://tartuhaagissuvila.ee/et/ is the default language version
-
-Sitemap: https://tartuhaagissuvila.ee/sitemap.xml
+Sitemap: https://tartuhaagissuvila.ee/sitemap-index.xml

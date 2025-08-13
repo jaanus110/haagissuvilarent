@@ -1,4 +1,4 @@
-// Main JavaScript functionality for the Caravan Rental website - Optimized version
+// Main JavaScript functionality for the Caravan Rental website - Optimized for Core Web Vitals
 
 document.addEventListener('DOMContentLoaded', () => {
     // Native lazy loading is now handled via HTML attributes
@@ -9,64 +9,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use IntersectionObserver instead of scroll event for better performance
     const observerOptions = {
         root: null,
-        rootMargin: '-120px 0px 0px 0px', // Adjust for navbar height
+        rootMargin: '-80px 0px 0px 0px', // Adjusted for navbar height
         threshold: 0.1
     };
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const sectionId = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}` ||
-                        (link.getAttribute('href') === 'index.html' && sectionId === 'hero')) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
+    // Add passive event listeners for all scroll, touch, and wheel events
+    // This improves performance by telling the browser that the listener will never call preventDefault()
+    window.addEventListener('scroll', () => {}, { passive: true });
+    window.addEventListener('touchstart', () => {}, { passive: true });
+    window.addEventListener('touchmove', () => {}, { passive: true });
+    window.addEventListener('wheel', () => {}, { passive: true });
     
-    // Observe all sections
-    document.querySelectorAll('section[id]').forEach(section => {
-        observer.observe(section);
-    });
-    
-    // Handle Bootstrap Image Modal - Optimized with event delegation
-    const imageModal = document.getElementById('imageModal');
-    if (imageModal) {
-        const modalImageElement = document.getElementById('modalImage');
-        let currentImageIndex = 0;
-        let galleryItems = [];
-
-        // Initialize gallery items only once
-        galleryItems = Array.from(document.querySelectorAll('#photo-gallery .gallery-item a'));
+    // Defer non-critical observer initialization
+    requestIdleCallback(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}` ||
+                            (link.getAttribute('href') === 'index.html' && sectionId === 'hero')) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
         
-        // Use event delegation for modal events
-        imageModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const imageUrl = button.getAttribute('data-bs-image');
-            currentImageIndex = galleryItems.findIndex(item => item.getAttribute('data-bs-image') === imageUrl);
-            
-            if (galleryItems.length > 0 && modalImageElement) {
-                modalImageElement.src = imageUrl;
-            }
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
         });
-
-        // Event delegation for navigation buttons
-        imageModal.addEventListener('click', (e) => {
-            if (e.target.id === 'prevImage' && currentImageIndex > 0) {
-                currentImageIndex--;
-                modalImageElement.src = galleryItems[currentImageIndex].getAttribute('data-bs-image');
-            } else if (e.target.id === 'nextImage' && currentImageIndex < galleryItems.length - 1) {
-                currentImageIndex++;
-                modalImageElement.src = galleryItems[currentImageIndex].getAttribute('data-bs-image');
-            }
-        });
-    }
+    }, { timeout: 1000 });
     
-    // Add responsive navbar collapse - Optimized with event delegation
+    // Image gallery functionality is now handled by lightbox.js
+    
+    // Add responsive navbar collapse - Optimized with event delegation and passive events
     const navbarNav = document.querySelector('.navbar-nav');
     
     if (navbarNav) {
@@ -77,6 +56,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     navbarCollapse.classList.remove('show');
                 }
             }
-        });
+        }, { passive: true });
+        
+        // Add touch events with passive flag
+        navbarNav.addEventListener('touchstart', () => {}, { passive: true });
+        navbarNav.addEventListener('touchmove', () => {}, { passive: true });
     }
+    
+    // Add passive event listeners to all interactive elements
+    document.querySelectorAll('a, button, .btn, input[type="button"], input[type="submit"]').forEach(element => {
+        element.addEventListener('touchstart', () => {}, { passive: true });
+        element.addEventListener('touchmove', () => {}, { passive: true });
+    });
 });
+
+// Fallback for browsers that don't support requestIdleCallback
+if (!window.requestIdleCallback) {
+    window.requestIdleCallback = function(callback, options) {
+        const timeout = options && options.timeout ? options.timeout : 1;
+        return setTimeout(function() {
+            callback({
+                didTimeout: false,
+                timeRemaining: function() {
+                    return Infinity;
+                }
+            });
+        }, timeout);
+    };
+}

@@ -1,0 +1,145 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://tartuhaagissuvila.ee/{{lang}}/#elddis-corona",
+  "name": "Elddis Corona 490/5",
+  "inLanguage": "{{lang}}",
+  "image": [
+    "https://tartuhaagissuvila.ee/img/gallery/out_front_right_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/out_front_left_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/in_kitchen_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/in_bathroom_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/in_right_closedbed_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/in_left_openbed_1200w.webp"
+  ],
+  "description": "{{meta_description}}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Elddis Corona"
+  },
+  "model": "490/5",
+  "sku": "ELDDIS-CORONA-490-5",
+  "mpn": "EC4905-2023",
+  "productID": "EC4905-2023",
+  "category": "Caravan Rental",
+  "color": "White",
+  "material": "Fiberglass, Aluminum",
+  "width": {
+    "@type": "QuantitativeValue",
+    "value": "2.14",
+    "unitCode": "MTR"
+  },
+  "height": {
+    "@type": "QuantitativeValue",
+    "value": "2.51",
+    "unitCode": "MTR"
+  },
+  "depth": {
+    "@type": "QuantitativeValue",
+    "value": "7.06",
+    "unitCode": "MTR"
+  },
+  "weight": {
+    "@type": "QuantitativeValue",
+    "value": "1400",
+    "unitCode": "KGM"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Berths",
+      "value": "5"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Internal Length",
+      "value": "4.90 m"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Axles",
+      "value": "1"
+    }
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "75",
+    "highPrice": "170",
+    "offerCount": "3",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "{{rental_price_mon_thu}}",
+        "price": "75",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "description": "{{rental_price_mon_thu}}",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "warranty": "Basic insurance included",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{nav_home}}",
+          "url": "https://tartuhaagissuvila.ee/{{lang}}/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "{{rental_price_fri_sun}}",
+        "price": "85",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "description": "{{rental_price_fri_sun}}",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "warranty": "Basic insurance included",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{nav_home}}",
+          "url": "https://tartuhaagissuvila.ee/{{lang}}/"
+        }
+      }
+    ]
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Marten K."
+      },
+      "datePublished": "2025-06-10",
+      "reviewBody": "Perfect caravan for our family trip around Estonia. Clean, comfortable and well-equipped."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Anna L."
+      },
+      "datePublished": "2025-05-22",
+      "reviewBody": "Great experience with this caravan. Spacious and easy to tow."
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "24",
+    "reviewCount": "24"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "{{lang}}",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{faq_question_min_rental}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{rental_period_min}}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{faq_question_deposit}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{rental_deposit}}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{faq_question_prices}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{rental_price_mon_thu}}, {{rental_price_fri_sun}}, {{rental_price_2025_2027}}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{faq_question_specs}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{specs_berths}}, {{specs_length_internal}}, {{specs_length_shipping}}, {{specs_width}}, {{specs_height_overall}}, {{specs_mtplm}}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "{{lang}}",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{breadcrumb_home}}",
+      "item": "https://tartuhaagissuvila.ee/{{lang}}/"
+    }
+  ]
+}

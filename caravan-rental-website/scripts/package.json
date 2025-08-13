@@ -1,0 +1,17 @@
+{
+  "name": "avif-converter",
+  "version": "1.0.0",
+  "description": "Script to convert WebP and JPEG images to AVIF format for better compression",
+  "main": "generate-avif.js",
+  "scripts": {
+    "generate": "node generate-avif.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1",
+    "glob": "^10.2.6"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true
+}

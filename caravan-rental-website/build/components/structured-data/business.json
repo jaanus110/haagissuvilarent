@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "additionalType": "https://schema.org/AutoRental",
+  "name": "{{nav_home}}",
+  "url": "https://tartuhaagissuvila.ee/{{lang}}/",
+  "inLanguage": "{{lang}}",
+  "logo": "https://tartuhaagissuvila.ee/img/gallery/out_front_right_400w.webp",
+  "image": [
+    "https://tartuhaagissuvila.ee/img/gallery/out_front_right_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/out_front_left_1200w.webp",
+    "https://tartuhaagissuvila.ee/img/gallery/in_kitchen_1200w.webp"
+  ],
+  "description": "{{meta_description}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Saariku",
+    "addressLocality": "Tartu",
+    "addressRegion": "Tartumaa",
+    "postalCode": "51014",
+    "addressCountry": "EE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "58.3634850",
+    "longitude": "26.6822315"
+  },
+  "telephone": "+37253322495",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+37253322495",
+      "contactType": "customer service"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+37255568914",
+      "contactType": "customer service"
+    }
+  ],
+  "email": "info@tartuhaagissuvila.ee",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
+  "priceRange": "€€",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "currenciesAccepted": "EUR",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "58.3634850",
+      "longitude": "26.6822315"
+    },
+    "geoRadius": "200km"
+  },
+  "sameAs": [
+    "https://g.co/kgs/E3dQkDc"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Caravan Rental Options",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Elddis Corona 490/5",
+          "description": "Comfortable 5-berth caravan for rent"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "24"
+  }
+}
