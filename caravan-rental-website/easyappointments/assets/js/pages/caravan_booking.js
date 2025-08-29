@@ -15,7 +15,7 @@
 (function() {
     'use strict';
     
-    console.log('Caravan booking script loaded!');
+    console.log('Caravan booking script loaded! v2.0');
     
     // Force caravan mode immediately
     function forceCaravanMode() {
