@@ -1,0 +1,83 @@
+/* Caravan Booking Specific Styles */
+
+/* Force hide timezone and time selection for ALL bookings (aggressive approach) */
+#select-timezone,
+#select-timezone + .mb-3,
+.mb-3:has(#select-timezone) {
+    display: none !important;
+}
+
+#available-hours,
+#available-hours + label,
+label[for="available-hours"] {
+    display: none !important;
+}
+
+/* Hide any element containing timezone */
+.mb-3:has(select[id*="timezone"]) {
+    display: none !important;
+}
+
+/* Style the caravan rental controls */
+#rental-days-container {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0.375rem !important;
+    padding: 1rem !important;
+}
+
+#rental-days-container label {
+    font-weight: 600 !important;
+    color: #495057 !important;
+}
+
+#end-date-display {
+    background-color: #e7f3ff !important;
+    border: 1px solid #b3d9ff !important;
+    border-radius: 0.375rem !important;
+    padding: 0.75rem !important;
+}
+
+#total-price-display {
+    background-color: #e8f5e8 !important;
+    border: 1px solid #c3e6c3 !important;
+    border-radius: 0.375rem !important;
+    padding: 0.75rem !important;
+    font-size: 1.1rem !important;
+}
+
+#total-price-display strong {
+    color: #28a745 !important;
+}
+
+/* Debug indicator */
+.caravan-debug {
+    position: fixed !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: red !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 3px !important;
+    z-index: 9999 !important;
+    font-size: 12px !important;
+}
+
+/* Additional aggressive hiding */
+.form-group:has(#select-timezone),
+.form-control-wrapper:has(#select-timezone),
+div:has(> #select-timezone) {
+    display: none !important;
+}
+
+/* Hide any label that contains "Timezone" text */
+label:contains("Timezone"),
+label[for*="timezone"] {
+    display: none !important;
+}
+
+/* Hide the time slot button */
+.available-hour,
+.btn:contains("00:00") {
+    display: none !important;
+}

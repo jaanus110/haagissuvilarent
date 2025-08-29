@@ -105,8 +105,8 @@ App.Pages.Booking = (function () {
 
         App.Utils.UI.initializeDatePicker($selectDate, {
             inline: true,
-            minDate: moment().subtract(1, 'day').set({hours: 23, minutes: 59, seconds: 59}).toDate(),
-            maxDate: moment().add(vars('future_booking_limit'), 'days').toDate(),
+            minDate: moment().toDate(),
+            maxDate: moment().add(Math.min(vars('future_booking_limit') || 90, 365), 'days').toDate(),
             onChange: (selectedDates) => {
                 App.Http.Booking.getAvailableHours(moment(selectedDates[0]).format('YYYY-MM-DD'));
                 App.Pages.Booking.updateConfirmFrame();
@@ -696,15 +696,53 @@ App.Pages.Booking = (function () {
         const selectedTime = $availableHours.find('.selected-hour').text();
 
         let formattedSelectedDate = '';
+        let timezoneDisplay = '';
+        let durationDisplay = '';
+
+        // Check if this is a caravan service (1440 minutes = 24 hours)
+        const isCaravanService = service.duration == 1440;
 
         if (selectedDateObject) {
-            formattedSelectedDate =
-                App.Utils.Date.format(selectedDate, vars('date_format'), vars('time_format'), false) +
-                ' ' +
-                selectedTime;
+            if (isCaravanService) {
+                // For caravan services, show only the date without time
+                formattedSelectedDate = App.Utils.Date.format(selectedDate, vars('date_format'), vars('time_format'), false);
+            } else {
+                // For regular services, show date and time
+                formattedSelectedDate =
+                    App.Utils.Date.format(selectedDate, vars('date_format'), vars('time_format'), false) +
+                    ' ' +
+                    selectedTime;
+            }
         }
 
-        const timezoneOptionText = $selectTimezone.find('option:selected').text();
+        // Hide timezone for caravan services
+        if (!isCaravanService) {
+            const timezoneOptionText = $selectTimezone.find('option:selected').text();
+            timezoneDisplay = `
+                <div class="mb-2">
+                    <i class="fas fa-globe me-2"></i>
+                    ${timezoneOptionText}
+                </div>
+            `;
+        }
+
+        // Show duration differently for caravan services
+        if (isCaravanService) {
+            // For caravan services, duration will be handled by the caravan booking script
+            durationDisplay = `
+                <div class="mb-2">
+                    <i class="fas fa-calendar-alt me-2"></i>
+                    <span id="caravan-duration-display">${service.duration} ${lang('minutes')}</span>
+                </div>
+            `;
+        } else {
+            durationDisplay = `
+                <div class="mb-2">
+                    <i class="fas fa-clock me-2"></i>
+                    ${service.duration} ${lang('minutes')}
+                </div>
+            `;
+        }
 
         $('#appointment-details').html(`
             <div>
@@ -718,14 +756,8 @@ App.Pages.Booking = (function () {
                     <i class="fas fa-calendar-day me-2"></i>
                     ${formattedSelectedDate}
                 </div> 
-                <div class="mb-2">
-                    <i class="fas fa-clock me-2"></i>
-                    ${service.duration} ${lang('minutes')}
-                </div>
-                <div class="mb-2">
-                    <i class="fas fa-globe me-2"></i>
-                    ${timezoneOptionText}
-                </div> 
+                ${durationDisplay}
+                ${timezoneDisplay}
                 <div class="mb-2" ${!Number(service.price) ? 'hidden' : ''}>
                     <i class="fas fa-cash-register me-2"></i>
                     ${Number(service.price).toFixed(2)} ${service.currency}

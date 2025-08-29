@@ -78,6 +78,7 @@ class Booking extends EA_Controller
         $this->load->library('notifications');
         $this->load->library('availability');
         $this->load->library('webhooks_client');
+        $this->load->library('caravan_rental');
     }
 
     /**
@@ -367,6 +368,14 @@ class Booking extends EA_Controller
 
             $service = $this->services_model->find($appointment['id_services']);
 
+            // Validate caravan rental specific requirements
+            if ($this->caravan_rental->is_caravan_service($service)) {
+                $validation_result = $this->caravan_rental->validate_booking($appointment);
+                if (!$validation_result['success']) {
+                    throw new RuntimeException($validation_result['message']);
+                }
+            }
+
             $require_captcha = (bool) setting('require_captcha');
 
             $captcha_phrase = session('captcha_phrase');
@@ -622,40 +631,60 @@ class Booking extends EA_Controller
 
             $service = $this->services_model->find($service_id);
 
-            if ($provider_id === ANY_PROVIDER) {
-                $providers = $this->providers_model->get();
+            // Handle caravan rental services differently
+            if ($this->caravan_rental->is_caravan_service($service)) {
+                // For caravan rental, check if the date is available (not booked)
+                $unavailable_dates = $this->caravan_rental->get_available_dates($provider_id, $service_id, date('Y-m', strtotime($selected_date)));
+                
+                // Check if the selected date meets minimum advance booking requirement
+                $min_advance = $this->caravan_rental->get_min_advance_booking();
+                $min_date = new DateTime();
+                $min_date->add(new DateInterval('P' . $min_advance . 'D'));
+                $selected_date_obj = new DateTime($selected_date);
+                
+                if (in_array($selected_date, $unavailable_dates) || $selected_date_obj < $min_date) {
+                    $response = []; // No available hours if date is booked or too early
+                } else {
+                    // Return the dummy time slot for day-based booking
+                    $response = $this->caravan_rental->get_daily_time_slots($selected_date);
+                }
+            } else {
+                // Standard appointment booking logic
+                if ($provider_id === ANY_PROVIDER) {
+                    $providers = $this->providers_model->get();
 
-                $available_hours = [];
+                    $available_hours = [];
 
-                foreach ($providers as $provider) {
-                    if (!in_array($service_id, $provider['services'])) {
-                        continue;
+                    foreach ($providers as $provider) {
+                        if (!in_array($service_id, $provider['services'])) {
+                            continue;
+                        }
+
+                        $provider_available_hours = $this->availability->get_available_hours(
+                            $selected_date,
+                            $service,
+                            $provider,
+                            $exclude_appointment_id,
+                        );
+
+                        $available_hours = array_merge($available_hours, $provider_available_hours);
                     }
 
-                    $provider_available_hours = $this->availability->get_available_hours(
+                    $available_hours = array_unique(array_values($available_hours));
+
+                    sort($available_hours);
+
+                    $response = $available_hours;
+                } else {
+                    $provider = $this->providers_model->find($provider_id);
+
+                    $response = $this->availability->get_available_hours(
                         $selected_date,
                         $service,
                         $provider,
                         $exclude_appointment_id,
                     );
-
-                    $available_hours = array_merge($available_hours, $provider_available_hours);
                 }
-
-                $available_hours = array_unique(array_values($available_hours));
-
-                sort($available_hours);
-
-                $response = $available_hours;
-            } else {
-                $provider = $this->providers_model->find($provider_id);
-
-                $response = $this->availability->get_available_hours(
-                    $selected_date,
-                    $service,
-                    $provider,
-                    $exclude_appointment_id,
-                );
             }
 
             json_response($response);

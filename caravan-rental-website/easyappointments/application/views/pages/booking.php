@@ -60,5 +60,6 @@
 <script src="<?= asset_url('assets/js/utils/url.js') ?>"></script>
 <script src="<?= asset_url('assets/js/http/booking_http_client.js') ?>"></script>
 <script src="<?= asset_url('assets/js/pages/booking.js') ?>"></script>
+<script src="<?= asset_url('assets/js/pages/caravan_booking.js') ?>"></script>
 
 <?php end_section('scripts'); ?>
