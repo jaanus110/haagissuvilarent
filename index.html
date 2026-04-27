@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caravan Rental in Tartu, Estonia</title>
+    <meta name="description" content="Rent a comfortable caravan in Tartu, Estonia. Perfect for family holidays and exploring the Baltics.">
+    <link rel="canonical" href="https://tartuhaagissuvila.ee/et/">
+    <meta http-equiv="refresh" content="0;url=/et/">
+    
+    <!-- Language alternates -->
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/et/" hreflang="x-default">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/en/" hreflang="en">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/en/" hreflang="en-US">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/et/" hreflang="et-EE">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/ru/" hreflang="ru">
+    <link rel="alternate" href="https://tartuhaagissuvila.ee/ru/" hreflang="ru-RU">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .language-links {
+            margin-top: 20px;
+        }
+        .language-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        // Language detection logic
+        function detectLanguage() {
+            // Check for stored preference
+            const storedLang = localStorage.getItem('preferredLang');
+            if (storedLang && ['en', 'et', 'ru'].includes(storedLang)) {
+                return storedLang;
+            }
+            
+            // Check browser language
+            const browserLangs = (navigator.languages || [navigator.language || navigator.userLanguage])
+                .map(lang => lang.split('-')[0].toLowerCase());
+            
+            if (browserLangs.includes('et')) return 'et';
+            if (browserLangs.includes('ru')) return 'ru';
+            if (browserLangs.includes('en')) return 'en';
+            
+            // Default to Estonian
+            return 'et';
+        }
+        
+        // Redirect to detected language
+        const lang = detectLanguage();
+        localStorage.setItem('preferredLang', lang); // Store for future visits
+        window.location.replace('/' + lang + '/');
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, please choose a language:</p>
+    <div class="language-links">
+        <a href="/et/">Eesti keeles</a>
+        <a href="/en/">In English</a>
+        <a href="/ru/">На русском</a>
+    </div>
+</body>
+</html>
