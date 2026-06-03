@@ -1,0 +1,28 @@
+
+=== Missing translations for ru/privacy-policy.html ===
+Date: 2026-06-03T14:40:19.186Z
+
+
+== REGULAR ==
+privacy_policy_full_content
+
+=== Missing translations for ru/cookie-policy.html ===
+Date: 2026-06-03T14:40:19.204Z
+
+
+== REGULAR ==
+cookie_policy_full_content
+
+=== Missing translations for ru/privacy-policy.html ===
+Date: 2026-06-03T14:43:26.012Z
+
+
+== REGULAR ==
+privacy_policy_full_content
+
+=== Missing translations for ru/cookie-policy.html ===
+Date: 2026-06-03T14:43:26.019Z
+
+
+== REGULAR ==
+cookie_policy_full_content

@@ -25,20 +25,19 @@
     "latitude": "58.3634850",
     "longitude": "26.6822315"
   },
-  "telephone": "+37253322495",
+  "telephone": "+37255568914",
   "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+37253322495",
-      "contactType": "customer service"
-    },
     {
       "@type": "ContactPoint",
       "telephone": "+37255568914",
       "contactType": "customer service"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+37253322495",
+      "contactType": "customer service"
     }
   ],
-  "email": "info@tartuhaagissuvila.ee",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
