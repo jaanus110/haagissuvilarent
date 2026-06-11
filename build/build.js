@@ -837,13 +837,12 @@ async function generateRootIndex() {
                 return storedLang;
             }
             
-            // Check browser language
+            // Check browser language. Only Russian triggers Russian.
+            // English is ignored here and will only show English if stored.
             const browserLangs = (navigator.languages || [navigator.language || navigator.userLanguage])
                 .map(lang => lang.split('-')[0].toLowerCase());
             
-            if (browserLangs.includes('et')) return 'et';
             if (browserLangs.includes('ru')) return 'ru';
-            if (browserLangs.includes('en')) return 'en';
             
             // Default to Estonian
             return 'et';
