@@ -9,7 +9,7 @@ const mkdir = util.promisify(fs.mkdir);
 const readdir = util.promisify(fs.readdir);
 
 // Define supported languages
-const languages = ['en', 'et', 'ru'];
+const languages = ['et', 'en', 'ru'];
 const defaultLanguage = 'et';
 
 // Define base URL for the website
@@ -799,16 +799,16 @@ async function generateRootIndex() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caravan Rental in Tartu, Estonia</title>
-    <meta name="description" content="Rent a comfortable caravan in Tartu, Estonia. Perfect for family holidays and exploring the Baltics.">
+    <title>Haagissuvila Rent Tartus | TartuHaagissuvila.ee</title>
+    <meta name="description" content="Rendi mugav haagissuvila Tartus. Täiuslik valik perepuhkuseks Eestis ja Baltikumis.">
     <link rel="canonical" href="${baseUrl}/${defaultLanguage}/">
     <meta http-equiv="refresh" content="0;url=/${defaultLanguage}/">
     
     <!-- Language alternates -->
     <link rel="alternate" href="${baseUrl}/${defaultLanguage}/" hreflang="x-default">
+    <link rel="alternate" href="${baseUrl}/${defaultLanguage}/" hreflang="et-EE">
     <link rel="alternate" href="${baseUrl}/en/" hreflang="en">
     <link rel="alternate" href="${baseUrl}/en/" hreflang="en-US">
-    <link rel="alternate" href="${baseUrl}/et/" hreflang="et-EE">
     <link rel="alternate" href="${baseUrl}/ru/" hreflang="ru">
     <link rel="alternate" href="${baseUrl}/ru/" hreflang="ru-RU">
     <style>
@@ -856,8 +856,8 @@ async function generateRootIndex() {
     </script>
 </head>
 <body>
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected automatically, please choose a language:</p>
+    <h1>Suunan esmalt Eesti versiooni...</h1>
+    <p>Kui te ei suundu automaatselt, valige palun keel:</p>
     <div class="language-links">
         <a href="/et/">Eesti keeles</a>
         <a href="/en/">In English</a>
